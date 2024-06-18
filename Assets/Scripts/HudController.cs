@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.Video;
 
-public class HudController : MonoBehaviour {
+public class HudController2 : MonoBehaviour {
+    private Animator headAnimator;
 
-    private GameObject hudManager;
-    private Animator hudAnimator;
+    public int currentHP = 100;
 
-    private bool isAnimationRunning = false;
+    public RuntimeAnimatorController faceAnimator100_81;
+    public RuntimeAnimatorController faceAnimator80_61;
+    public RuntimeAnimatorController faceAnimator60_41;
+    public RuntimeAnimatorController faceAnimator40_21;
+    public RuntimeAnimatorController faceAnimator21_1;
+
     private bool isLookingAnimationRunning = false;
-
     private bool isBlinkCoroutineRunning = false;
     private bool isBlinkingCoroutineRunning = false;
     private bool isAngerCouroutineRunning = false;
@@ -18,12 +23,39 @@ public class HudController : MonoBehaviour {
     private bool isFearCouroutineRunning = false;
 
     void Start() {
-        hudAnimator.SetInteger("priority", 1);
+        headAnimator = GameObject.Find("HeadAnimator").GetComponent<Animator>();
+        LoadAnimatorControllers();
+        UpdateAnimatorController();
+        StartRandomBlinking(5f);
     }
 
-    void Awake() {
-        hudManager = GameObject.Find("Head-animator");
-        hudAnimator = hudManager.GetComponent<Animator>();
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            currentHP += 10;
+            UpdateAnimatorController();
+            Debug.Log("Inreasing HP by 10" + ", current animator: " + headAnimator.runtimeAnimatorController.name + ", current HP: " + currentHP);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow)) {
+            currentHP -= 10;
+            UpdateAnimatorController();
+            Debug.Log("Decreasing HP by 10" + ", current animator: " + headAnimator.runtimeAnimatorController.name + ", current HP: " + currentHP);
+        }
+    }
+
+    void OnEnable() {
+        PlayerMovementInputSystem.Angry += StartTriggerAnger;
+        HandlePlayerAnimations.OnLookDown += StartLookDown;
+        HandlePlayerAnimations.OnLookUp += StartLookUp;
+        HandlePlayerAnimations.OnLookLeft += StartLookLeft;
+        HandlePlayerAnimations.OnLookRight += StartLookRight;
+    }
+
+    void OnDisable() {
+        PlayerMovementInputSystem.Angry -= StartTriggerAnger;
+        HandlePlayerAnimations.OnLookDown -= StartLookDown;
+        HandlePlayerAnimations.OnLookUp -= StartLookUp;
+        HandlePlayerAnimations.OnLookLeft -= StartLookLeft;
+        HandlePlayerAnimations.OnLookRight -= StartLookRight;
     }
 
     public void StartBlink(float delay = 0f) {
@@ -68,9 +100,9 @@ public class HudController : MonoBehaviour {
     private IEnumerator Blink(float delay = 0) {
         if (!isBlinkCoroutineRunning) {
             isBlinkCoroutineRunning = true;
-            hudAnimator.SetTrigger("Blink");
+            headAnimator.SetTrigger("Blink");
             yield return new WaitForSeconds(delay);
-            hudAnimator.SetInteger("priority", 1);
+            headAnimator.SetInteger("priority", 1);
             isBlinkCoroutineRunning = false;
         }
     }
@@ -78,11 +110,11 @@ public class HudController : MonoBehaviour {
     private IEnumerator LookLeft(float delay) {
         if (!isLookingAnimationRunning) {
             isLookingAnimationRunning = true;
-            hudAnimator.SetInteger("priority", 2);
-            hudAnimator.SetBool("lookingLeft", true);
+            headAnimator.SetInteger("priority", 2);
+            headAnimator.SetBool("lookingLeft", true);
             yield return new WaitForSeconds(delay);
-            hudAnimator.SetInteger("priority", 1);
-            hudAnimator.SetBool("lookingLeft", false);
+            headAnimator.SetInteger("priority", 1);
+            headAnimator.SetBool("lookingLeft", false);
             float randomCoolDownDelay = Random.Range(0.5f, 2);
             yield return new WaitForSeconds(randomCoolDownDelay); // cannot be called for a certain duration
             isLookingAnimationRunning = false;
@@ -92,11 +124,11 @@ public class HudController : MonoBehaviour {
     private IEnumerator LookRight(float delay) {
         if (!isLookingAnimationRunning) {
             isLookingAnimationRunning = true;
-            hudAnimator.SetInteger("priority", 2);
-            hudAnimator.SetBool("lookingRight", true);
+            headAnimator.SetInteger("priority", 2);
+            headAnimator.SetBool("lookingRight", true);
             yield return new WaitForSeconds(delay);
-            hudAnimator.SetInteger("priority", 1);
-            hudAnimator.SetBool("lookingRight", false);
+            headAnimator.SetInteger("priority", 1);
+            headAnimator.SetBool("lookingRight", false);
             float randomCoolDownDelay = Random.Range(0.5f, 2);
             yield return new WaitForSeconds(randomCoolDownDelay); // cannot be called for a certain duration
             isLookingAnimationRunning = false;
@@ -106,11 +138,11 @@ public class HudController : MonoBehaviour {
     private IEnumerator LookUp(float delay) {
         if (!isLookingAnimationRunning) {
             isLookingAnimationRunning = true;
-            hudAnimator.SetInteger("priority", 2);
-            hudAnimator.SetBool("lookingUp", true);
+            headAnimator.SetInteger("priority", 2);
+            headAnimator.SetBool("lookingUp", true);
             yield return new WaitForSeconds(delay);
-            hudAnimator.SetInteger("priority", 1);
-            hudAnimator.SetBool("lookingUp", false);
+            headAnimator.SetInteger("priority", 1);
+            headAnimator.SetBool("lookingUp", false);
             float randomCoolDownDelay = Random.Range(0.5f, 2);
             yield return new WaitForSeconds(randomCoolDownDelay); // cannot be called for a certain duration
             isLookingAnimationRunning = false;
@@ -120,11 +152,11 @@ public class HudController : MonoBehaviour {
     private IEnumerator LookDown(float delay) {
         if (!isLookingAnimationRunning) {
             isLookingAnimationRunning = true;
-            hudAnimator.SetInteger("priority", 2);
-            hudAnimator.SetBool("lookingDown", true);
+            headAnimator.SetInteger("priority", 2);
+            headAnimator.SetBool("lookingDown", true);
             yield return new WaitForSeconds(delay);
-            hudAnimator.SetInteger("priority", 1);
-            hudAnimator.SetBool("lookingDown", false);
+            headAnimator.SetInteger("priority", 1);
+            headAnimator.SetBool("lookingDown", false);
             float randomCoolDownDelay = Random.Range(0.5f, 2);
             yield return new WaitForSeconds(randomCoolDownDelay); // cannot be called for a certain duration
             isLookingAnimationRunning = false;
@@ -134,11 +166,11 @@ public class HudController : MonoBehaviour {
     private IEnumerator TriggerFear(float delay) {
         if (!isFearCouroutineRunning) {
             isFearCouroutineRunning = true;
-            hudAnimator.SetBool("isTerrified", true);
-            hudAnimator.SetInteger("priority", 3);
+            headAnimator.SetBool("isTerrified", true);
+            headAnimator.SetInteger("priority", 3);
             yield return new WaitForSeconds(delay);
-            hudAnimator.SetInteger("priority", 1);
-            hudAnimator.SetBool("isTerrified", false);
+            headAnimator.SetInteger("priority", 1);
+            headAnimator.SetBool("isTerrified", false);
             isFearCouroutineRunning = false;
         }
     }
@@ -146,11 +178,11 @@ public class HudController : MonoBehaviour {
     private IEnumerator TriggerAnger(float delay) {
         if (!isAngerCouroutineRunning) {
             isAngerCouroutineRunning = true;
-            hudAnimator.SetBool("isAngry", true);
-            hudAnimator.SetInteger("priority", 3);
+            headAnimator.SetBool("isAngry", true);
+            headAnimator.SetInteger("priority", 3);
             yield return new WaitForSeconds(delay);
-            hudAnimator.SetInteger("priority", 1);
-            hudAnimator.SetBool("isAngry", false);
+            headAnimator.SetInteger("priority", 1);
+            headAnimator.SetBool("isAngry", false);
             isAngerCouroutineRunning = false;
         }
     }
@@ -158,11 +190,11 @@ public class HudController : MonoBehaviour {
     private IEnumerator TriggerSurprise(float delay) {
         if (!isSurpriseCouroutineRunning) {
             isSurpriseCouroutineRunning = true;
-            hudAnimator.SetBool("isSurprised", true);
-            hudAnimator.SetInteger("priority", 3);
+            headAnimator.SetBool("isSurprised", true);
+            headAnimator.SetInteger("priority", 3);
             yield return new WaitForSeconds(delay);
-            hudAnimator.SetInteger("priority", 1);
-            hudAnimator.SetBool("isSurprised", false);
+            headAnimator.SetInteger("priority", 1);
+            headAnimator.SetBool("isSurprised", false);
             isSurpriseCouroutineRunning = false;
         }
     }
@@ -172,8 +204,40 @@ public class HudController : MonoBehaviour {
             isBlinkingCoroutineRunning = true;
             float randomDelay = Random.Range(2f, delay);
             yield return new WaitForSeconds(randomDelay);
-            hudAnimator.SetTrigger("Blink");
+            headAnimator.SetTrigger("Blink");
             isBlinkingCoroutineRunning = false;
         }
+    }
+
+    void UpdateAnimatorController() {
+        switch (currentHP) {
+            case int hp when hp > 80:
+                headAnimator.runtimeAnimatorController = faceAnimator100_81;
+                break;
+            case int hp when hp > 60:
+                headAnimator.runtimeAnimatorController = faceAnimator80_61;
+                break;
+            case int hp when hp > 40:
+                headAnimator.runtimeAnimatorController = faceAnimator60_41;
+                break;
+            case int hp when hp > 20:
+                headAnimator.runtimeAnimatorController = faceAnimator40_21;
+                break;
+            default:
+                headAnimator.runtimeAnimatorController = faceAnimator21_1;
+                break;
+        }
+    }
+
+    void LoadAnimatorControllers() {
+        faceAnimator100_81 = LoadAnimatorController("Assets/Animations/Player/Face/Player-head-controller100_81.controller");
+        faceAnimator80_61 = LoadAnimatorController("Assets/Animations/Player/Face/Player-head-controller80_61.controller");
+        faceAnimator60_41 = LoadAnimatorController("Assets/Animations/Player/Face/Player-head-controller60_41.controller");
+        faceAnimator40_21 = LoadAnimatorController("Assets/Animations/Player/Face/Player-head-controller40_21.controller");
+        faceAnimator21_1 = LoadAnimatorController("Assets/Animations/Player/Face/Player-head-controller20_1.controller");
+    }
+
+    RuntimeAnimatorController LoadAnimatorController(string path) {
+        return AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(path);
     }
 }

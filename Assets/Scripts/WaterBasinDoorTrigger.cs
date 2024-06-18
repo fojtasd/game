@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class WaterBasinTrigger : MonoBehaviour {
     public Animator waterBasinAnimator;
-
-    public HudController hudController;
-
     public SimpleDialogBox dialogBox;
     public delegate void WaterBasinAction();
     public static event WaterBasinAction OnWaterBasinOpened;

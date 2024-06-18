@@ -22,7 +22,7 @@ public class SimpleDialogBox : MonoBehaviour {
         _text = GetComponentInChildren<TMP_Text>();
         _group = GetComponent<CanvasGroup>();
         playerSoundsLibrary = GameObject.FindWithTag("Settings").GetComponentInChildren<PlayerSoundsLibrary>();
-        _headAnimator = GameObject.Find("HudCanvas").transform.Find("HeadPanel/Head-controller/Head-animator").gameObject.GetComponent<Animator>();
+        _headAnimator = GameObject.Find("HudCanvas").transform.Find("HudPanel/HeadAnimator").gameObject.GetComponent<Animator>();
         _group.alpha = 0;
     }
 

@@ -6,18 +6,29 @@ using UnityEngine;
 public class HandlePlayerAnimations : MonoBehaviour {
     private Animator animator;
     private float idleTime = 0f;
+    private bool isFalling;
 
+    //////////////////// EVENTS ////////////////////
+    public delegate void EyesDirection(float duration = 0.5f);
+    public static event EyesDirection OnLookLeft;
+    public static event EyesDirection OnLookRight;
+    public static event EyesDirection OnLookUp;
+    public static event EyesDirection OnLookDown;
+
+    ///////////////// UNITY METHODS /////////////////
     void Start() {
         animator = GetComponent<Animator>();
         StartCoroutine(MeasureIdleTime());
     }
 
     void OnEnable() {
-        PlayerMovementInputSystem.OnWalk += AdjustWalkAnimation;
+        PlayerMovementInputSystem.OnWalkEvent += AdjustWalkAnimation;
+        PlayerMovementInputSystem.FallingEvent += CheckIfFalling;
     }
 
     void OnDisable() {
-        PlayerMovementInputSystem.OnWalk -= AdjustWalkAnimation;
+        PlayerMovementInputSystem.OnWalkEvent -= AdjustWalkAnimation;
+        PlayerMovementInputSystem.FallingEvent -= CheckIfFalling;
     }
 
     private void AdjustWalkAnimation(float walkingDirection = 0f) {
@@ -32,13 +43,19 @@ public class HandlePlayerAnimations : MonoBehaviour {
         }
     }
 
+    private void CheckIfFalling(bool isFalling) {
+        this.isFalling = isFalling;
+    }
+
     private void SetWalkingLeft() {
+        OnLookLeft.Invoke(1f);
         animator.SetBool("isWalking", true);
         animator.SetBool("isWalkingRight", false);
         animator.SetBool("isWalkingLeft", true);
     }
 
     private void SetWalkingRight() {
+        OnLookRight.Invoke(1f);
         animator.SetBool("isWalking", true);
         animator.SetBool("isWalkingLeft", false);
         animator.SetBool("isWalkingRight", true);
@@ -53,7 +70,7 @@ public class HandlePlayerAnimations : MonoBehaviour {
 
     private IEnumerator MeasureIdleTime() {
         while (true) {
-            while (IsIdleAnimationPlaying()) {
+            while (IsIdleAnimationPlaying() || isFalling) {
                 yield return new WaitForSeconds(1f);
                 idleTime = 0f;
             }
@@ -81,5 +98,24 @@ public class HandlePlayerAnimations : MonoBehaviour {
     private bool IsIdleAnimationPlaying() {
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         return stateInfo.length > stateInfo.normalizedTime;
+    }
+
+
+
+    //////////////////////////// EYES DIRECTION EVENTS ////////////////////////////
+    public void LookLeft() {
+        OnLookLeft.Invoke();
+    }
+
+    public void LookRight() {
+        OnLookRight.Invoke();
+    }
+
+    public void LookUp() {
+        OnLookUp.Invoke();
+    }
+
+    public void LookDown() {
+        OnLookDown.Invoke();
     }
 }
