@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class HudController2 : MonoBehaviour {
-    private Animator hudAnimator;
+    private Animator headAnimator;
 
     private bool isAngerCouroutineRunning = false;
     void Start() {
@@ -12,30 +12,31 @@ public class HudController2 : MonoBehaviour {
     }
 
     void Awake() {
-        hudAnimator = GameObject.Find("Head-animator").GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update() {
-
+        headAnimator = GameObject.Find("Head-animator").GetComponent<Animator>();
     }
 
     void OnEnable() {
-        PlayerMovementInputSystem.Angry += () => TriggerAnger(1f);
+        PlayerMovementInputSystem.Angry += StartTriggerAnger;
     }
 
     void OnDisable() {
-        PlayerMovementInputSystem.Angry -= () => TriggerAnger(1f);
+        PlayerMovementInputSystem.Angry -= StartTriggerAnger;
     }
+
+    public void StartTriggerAnger(float delay = 0.5f) {
+        StartCoroutine(TriggerAnger(delay));
+    }
+
+
 
     private IEnumerator TriggerAnger(float delay) {
         if (!isAngerCouroutineRunning) {
             isAngerCouroutineRunning = true;
-            hudAnimator.SetBool("isAngry", true);
-            hudAnimator.SetInteger("priority", 3);
+            headAnimator.SetBool("isAngry", true);
+            headAnimator.SetInteger("priority", 3);
             yield return new WaitForSeconds(delay);
-            hudAnimator.SetInteger("priority", 1);
-            hudAnimator.SetBool("isAngry", false);
+            headAnimator.SetInteger("priority", 1);
+            headAnimator.SetBool("isAngry", false);
             isAngerCouroutineRunning = false;
         }
     }

@@ -20,7 +20,7 @@ public class HandlePlayerAnimations : MonoBehaviour {
         PlayerMovementInputSystem.OnWalk -= AdjustWalkAnimation;
     }
 
-    private void AdjustWalkAnimation(float walkingDirection = 0) {
+    private void AdjustWalkAnimation(float walkingDirection = 0f) {
         if (walkingDirection > 0) {
             SetWalkingRight();
         }
