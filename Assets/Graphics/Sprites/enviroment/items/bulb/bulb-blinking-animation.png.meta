@@ -1,0 +1,702 @@
+fileFormatVersion: 2
+guid: 66f2274404481434f8949f048bee3564
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2198363188749211821
+    second: bulb-blinking-animation_0
+  - first:
+      213: 999133356294120353
+    second: bulb-blinking-animation_1
+  - first:
+      213: 6211150419109937193
+    second: bulb-blinking-animation_2
+  - first:
+      213: -4406880212898866421
+    second: bulb-blinking-animation_3
+  - first:
+      213: 7283122452611346081
+    second: bulb-blinking-animation_4
+  - first:
+      213: 8946101440902682999
+    second: bulb-blinking-animation_5
+  - first:
+      213: -8658556645585066910
+    second: bulb-blinking-animation_6
+  - first:
+      213: 8470381973912578977
+    second: bulb-blinking-animation_7
+  - first:
+      213: -8716880146133315991
+    second: bulb-blinking-animation_8
+  - first:
+      213: -3496005487131599279
+    second: bulb-blinking-animation_9
+  - first:
+      213: -6462854507712378764
+    second: bulb-blinking-animation_10
+  - first:
+      213: -2757191602044954184
+    second: bulb-blinking-animation_11
+  - first:
+      213: -3951067838138513811
+    second: bulb-blinking-animation_12
+  - first:
+      213: 1602408502690322477
+    second: bulb-blinking-animation_13
+  - first:
+      213: 8234793921198425399
+    second: bulb-blinking-animation_14
+  - first:
+      213: -8902925059060007721
+    second: bulb-blinking-animation_15
+  - first:
+      213: -2597765781256575580
+    second: bulb-blinking-animation_16
+  - first:
+      213: -3301812498432747183
+    second: bulb-blinking-animation_17
+  - first:
+      213: 3194345445560380748
+    second: bulb-blinking-animation_18
+  - first:
+      213: -442103212901175187
+    second: bulb-blinking-animation_19
+  - first:
+      213: -5453408706628653054
+    second: bulb-blinking-animation_20
+  - first:
+      213: 6545193638419795879
+    second: bulb-blinking-animation_21
+  - first:
+      213: 2653693769288049729
+    second: bulb-blinking-animation_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bulb-blinking-animation_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 357ee47c358dd71e0800000000000000
+      internalID: -2198363188749211821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a3a7217e72addd00800000000000000
+      internalID: 999133356294120353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_2
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9200199e560723650800000000000000
+      internalID: 6211150419109937193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_3
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0b17768bcd97d2c0800000000000000
+      internalID: -4406880212898866421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_4
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae22937849d21560800000000000000
+      internalID: 7283122452611346081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_5
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7795d9dacdfe62c70800000000000000
+      internalID: 8946101440902682999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_6
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 264ed481b90a6d780800000000000000
+      internalID: -8658556645585066910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_7
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ab6eeaf687dc8570800000000000000
+      internalID: 8470381973912578977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_8
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96e811ce0bb670780800000000000000
+      internalID: -8716880146133315991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_9
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15e54b63881bb7fc0800000000000000
+      internalID: -3496005487131599279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_10
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47885c021145f46a0800000000000000
+      internalID: -6462854507712378764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_11
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b99b6e98dc7cb9d0800000000000000
+      internalID: -2757191602044954184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_12
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6688402cbcfa29c0800000000000000
+      internalID: -3951067838138513811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_13
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d281ce31b06ec3610800000000000000
+      internalID: 1602408502690322477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_14
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7350497017dd74270800000000000000
+      internalID: 8234793921198425399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_15
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dcfdc814d4727480800000000000000
+      internalID: -8902925059060007721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_16
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a5698619c1e2fbd0800000000000000
+      internalID: -2597765781256575580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_17
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15998f3c60b9d22d0800000000000000
+      internalID: -3301812498432747183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_18
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d63842248945c20800000000000000
+      internalID: 3194345445560380748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_19
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6077f068755dd9f0800000000000000
+      internalID: -442103212901175187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_20
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 200706abca99154b0800000000000000
+      internalID: -5453408706628653054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_21
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7af882cafe235da50800000000000000
+      internalID: 6545193638419795879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bulb-blinking-animation_22
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 23
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 144e41d5c60d3d420800000000000000
+      internalID: 2653693769288049729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d89ad82c4bacebb43b4f30282abfc395
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bulb-blinking-animation_0: -2198363188749211821
+      bulb-blinking-animation_1: 999133356294120353
+      bulb-blinking-animation_10: -6462854507712378764
+      bulb-blinking-animation_11: -2757191602044954184
+      bulb-blinking-animation_12: -3951067838138513811
+      bulb-blinking-animation_13: 1602408502690322477
+      bulb-blinking-animation_14: 8234793921198425399
+      bulb-blinking-animation_15: -8902925059060007721
+      bulb-blinking-animation_16: -2597765781256575580
+      bulb-blinking-animation_17: -3301812498432747183
+      bulb-blinking-animation_18: 3194345445560380748
+      bulb-blinking-animation_19: -442103212901175187
+      bulb-blinking-animation_2: 6211150419109937193
+      bulb-blinking-animation_20: -5453408706628653054
+      bulb-blinking-animation_21: 6545193638419795879
+      bulb-blinking-animation_22: 2653693769288049729
+      bulb-blinking-animation_3: -4406880212898866421
+      bulb-blinking-animation_4: 7283122452611346081
+      bulb-blinking-animation_5: 8946101440902682999
+      bulb-blinking-animation_6: -8658556645585066910
+      bulb-blinking-animation_7: 8470381973912578977
+      bulb-blinking-animation_8: -8716880146133315991
+      bulb-blinking-animation_9: -3496005487131599279
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

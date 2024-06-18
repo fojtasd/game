@@ -1,0 +1,674 @@
+fileFormatVersion: 2
+guid: 95718e1639421a1409f253e66b525ec7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -303864622668677978
+    second: idle-watch-animation 1_0
+  - first:
+      213: 8165956490626484968
+    second: idle-watch-animation 1_1
+  - first:
+      213: 9030531759410828548
+    second: idle-watch-animation 1_2
+  - first:
+      213: -5902146728333656422
+    second: idle-watch-animation 1_3
+  - first:
+      213: 5353757023849736274
+    second: idle-watch-animation 1_4
+  - first:
+      213: 3867306552227866692
+    second: idle-watch-animation 1_5
+  - first:
+      213: -7970637106084840574
+    second: idle-watch-animation 1_6
+  - first:
+      213: 8858955499166682929
+    second: idle-watch-animation 1_7
+  - first:
+      213: 7879925513257393122
+    second: idle-watch-animation 1_8
+  - first:
+      213: 4760164757158286631
+    second: idle-watch-animation 1_9
+  - first:
+      213: -4188736182446841673
+    second: idle-watch-animation 1_10
+  - first:
+      213: 1583668609095496566
+    second: idle-watch-animation 1_11
+  - first:
+      213: 6792659177934470457
+    second: idle-watch-animation 1_12
+  - first:
+      213: 5317895268443592991
+    second: idle-watch-animation 1_13
+  - first:
+      213: 828096201014640006
+    second: idle-watch-animation 1_14
+  - first:
+      213: -4117050793333958248
+    second: idle-watch-animation 1_15
+  - first:
+      213: -6238627111145689430
+    second: idle-watch-animation 1_16
+  - first:
+      213: 1866684939199340645
+    second: idle-watch-animation 1_17
+  - first:
+      213: -4201923380398933150
+    second: idle-watch-animation 1_18
+  - first:
+      213: 2434931921660649481
+    second: idle-watch-animation 1_19
+  - first:
+      213: 4719885341390560414
+    second: idle-watch-animation 1_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: idle-watch-animation 1_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 398
+        width: 55
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ac76025cb478cbf0800000000000000
+      internalID: -303864622668677978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 398
+        width: 56
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea4613c92e435170800000000000000
+      internalID: 8165956490626484968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_2
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 398
+        width: 56
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 405d0941ac4e25d70800000000000000
+      internalID: 9030531759410828548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_3
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 398
+        width: 54
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e307d42dc571ea0800000000000000
+      internalID: -5902146728333656422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_4
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 398
+        width: 54
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 258e054d5ad5c4a40800000000000000
+      internalID: 5353757023849736274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_5
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 268
+        width: 54
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4482513c1de6ba530800000000000000
+      internalID: 3867306552227866692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_6
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 268
+        width: 54
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28bf34248cb926190800000000000000
+      internalID: -7970637106084840574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_7
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 268
+        width: 54
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13fc2d8f61551fa70800000000000000
+      internalID: 8858955499166682929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 268
+        width: 51
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eb9e32318e1b5d60800000000000000
+      internalID: 7879925513257393122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_9
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 268
+        width: 49
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 725d0ce40a08f0240800000000000000
+      internalID: 4760164757158286631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_10
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 138
+        width: 48
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b02e6b82ae9ed5c0800000000000000
+      internalID: -4188736182446841673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_11
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 138
+        width: 48
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 673f21795325af510800000000000000
+      internalID: 1583668609095496566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_12
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 138
+        width: 48
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93db415888f544e50800000000000000
+      internalID: 6792659177934470457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_13
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 138
+        width: 48
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f199f4c3295fcc940800000000000000
+      internalID: 5317895268443592991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_14
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 138
+        width: 48
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68df35d7b1dfd7b00800000000000000
+      internalID: 828096201014640006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_15
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 138
+        width: 48
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 899d615dd1c4dd6c0800000000000000
+      internalID: -4117050793333958248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_16
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 8
+        width: 49
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aae2a0232b1fb69a0800000000000000
+      internalID: -6238627111145689430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_17
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 8
+        width: 51
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5606c84ef0cc7e910800000000000000
+      internalID: 1866684939199340645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_18
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 8
+        width: 51
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26bb9e1c2f4cfa5c0800000000000000
+      internalID: -4201923380398933150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_19
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 8
+        width: 49
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 900a7d29ead9ac120800000000000000
+      internalID: 2434931921660649481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_20
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 8
+        width: 48
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9c582206b6608140800000000000000
+      internalID: 4719885341390560414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-watch-animation 1_21
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 8
+        width: 49
+        height: 109
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c742ae38fd717ff44bbc3c8bb84d9237
+      internalID: 1906674360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c578f3ed9cb5f2340bc15773cccc6d9c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      idle-watch-animation 1_0: -303864622668677978
+      idle-watch-animation 1_1: 8165956490626484968
+      idle-watch-animation 1_10: -4188736182446841673
+      idle-watch-animation 1_11: 1583668609095496566
+      idle-watch-animation 1_12: 6792659177934470457
+      idle-watch-animation 1_13: 5317895268443592991
+      idle-watch-animation 1_14: 828096201014640006
+      idle-watch-animation 1_15: -4117050793333958248
+      idle-watch-animation 1_16: -6238627111145689430
+      idle-watch-animation 1_17: 1866684939199340645
+      idle-watch-animation 1_18: -4201923380398933150
+      idle-watch-animation 1_19: 2434931921660649481
+      idle-watch-animation 1_2: 9030531759410828548
+      idle-watch-animation 1_20: 4719885341390560414
+      idle-watch-animation 1_21: 1906674360
+      idle-watch-animation 1_3: -5902146728333656422
+      idle-watch-animation 1_4: 5353757023849736274
+      idle-watch-animation 1_5: 3867306552227866692
+      idle-watch-animation 1_6: -7970637106084840574
+      idle-watch-animation 1_7: 8858955499166682929
+      idle-watch-animation 1_8: 7879925513257393122
+      idle-watch-animation 1_9: 4760164757158286631
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

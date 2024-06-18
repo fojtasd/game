@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Cursor
+  - Head
+  - Settings
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Background
+  - Water
+  - UI
+  - Player
+  - Ground
+  - LightLayer
+  - Obstancle
+  - Bubbles
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: BIG-NOTHING
+    uniqueID: 3557301609
+    locked: 0
+  - name: Hall-Background
+    uniqueID: 1298030411
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: PrePlayer
+    uniqueID: 2022416493
+    locked: 0
+  - name: Player
+    uniqueID: 2800941727
+    locked: 0
+  - name: FrontPlayer
+    uniqueID: 3501637151
+    locked: 0
+  - name: UI
+    uniqueID: 72205301
+    locked: 0
+  - name: Bubbles
+    uniqueID: 2987196067
+    locked: 0

@@ -1,0 +1,402 @@
+fileFormatVersion: 2
+guid: b186f029b4c7cb9479cfef82ce7bfda2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -604872213944224148
+    second: hud-bar-without-extra-shit_0
+  - first:
+      213: -1023708251748836390
+    second: hud-bar-without-extra-shit_1
+  - first:
+      213: -2199753394738874613
+    second: hud-bar-without-extra-shit_2
+  - first:
+      213: 5478969078901287517
+    second: hud-bar-without-extra-shit_3
+  - first:
+      213: 4632111519961730647
+    second: hud-bar-without-extra-shit_4
+  - first:
+      213: 1139509819490288727
+    second: hud-bar-without-extra-shit_5
+  - first:
+      213: -8000573125254807453
+    second: hud-bar-without-extra-shit_6
+  - first:
+      213: 3600663508285009505
+    second: hud-bar-without-extra-shit_7
+  - first:
+      213: -1455202310984330480
+    second: hud-bar-without-extra-shit_8
+  - first:
+      213: -8188260497894082493
+    second: hud-bar-without-extra-shit_9
+  - first:
+      213: -4982702455277223564
+    second: hud-bar-without-extra-shit_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hud-bar-without-extra-shit_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 2254
+        width: 1808
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c66b9591def0b97f0800000000000000
+      internalID: -604872213944224148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud-bar-without-extra-shit_1
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 2254
+        width: 1808
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adbdfd4d4ce0bc1f0800000000000000
+      internalID: -1023708251748836390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud-bar-without-extra-shit_2
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 2254
+        width: 1808
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b07312931f7e871e0800000000000000
+      internalID: -2199753394738874613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud-bar-without-extra-shit_3
+      rect:
+        serializedVersion: 2
+        x: 5820
+        y: 2254
+        width: 1808
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5aa2433955390c40800000000000000
+      internalID: 5478969078901287517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud-bar-without-extra-shit_4
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1234
+        width: 1808
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75e405ba2e0984040800000000000000
+      internalID: 4632111519961730647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud-bar-without-extra-shit_5
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1234
+        width: 1808
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 754c9c8b42a50df00800000000000000
+      internalID: 1139509819490288727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud-bar-without-extra-shit_6
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 1234
+        width: 1808
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36086a5a12148f090800000000000000
+      internalID: -8000573125254807453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud-bar-without-extra-shit_7
+      rect:
+        serializedVersion: 2
+        x: 5820
+        y: 1234
+        width: 1808
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e2a07326028f130800000000000000
+      internalID: 3600663508285009505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud-bar-without-extra-shit_8
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 214
+        width: 1808
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 013937945351ecbe0800000000000000
+      internalID: -1455202310984330480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud-bar-without-extra-shit_9
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 214
+        width: 1808
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 348f8aed5747d5e80800000000000000
+      internalID: -8188260497894082493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hud-bar-without-extra-shit_10
+      rect:
+        serializedVersion: 2
+        x: 3900
+        y: 214
+        width: 1808
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4710cb33482e9dab0800000000000000
+      internalID: -4982702455277223564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a78e7f247bad5754fb04ea09545a9363
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      hud-bar-without-extra-shit_0: -604872213944224148
+      hud-bar-without-extra-shit_1: -1023708251748836390
+      hud-bar-without-extra-shit_10: -4982702455277223564
+      hud-bar-without-extra-shit_2: -2199753394738874613
+      hud-bar-without-extra-shit_3: 5478969078901287517
+      hud-bar-without-extra-shit_4: 4632111519961730647
+      hud-bar-without-extra-shit_5: 1139509819490288727
+      hud-bar-without-extra-shit_6: -8000573125254807453
+      hud-bar-without-extra-shit_7: 3600663508285009505
+      hud-bar-without-extra-shit_8: -1455202310984330480
+      hud-bar-without-extra-shit_9: -8188260497894082493
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
