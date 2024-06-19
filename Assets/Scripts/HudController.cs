@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -8,12 +9,13 @@ public class HudController2 : MonoBehaviour {
     private Animator headAnimator;
 
     public int currentHP = 100;
+    private TextMeshProUGUI currentHpUi;
 
-    public RuntimeAnimatorController faceAnimator100_81;
-    public RuntimeAnimatorController faceAnimator80_61;
-    public RuntimeAnimatorController faceAnimator60_41;
-    public RuntimeAnimatorController faceAnimator40_21;
-    public RuntimeAnimatorController faceAnimator21_1;
+    private RuntimeAnimatorController faceAnimator100_81;
+    private RuntimeAnimatorController faceAnimator80_61;
+    private RuntimeAnimatorController faceAnimator60_41;
+    private RuntimeAnimatorController faceAnimator40_21;
+    private RuntimeAnimatorController faceAnimator21_1;
 
     private bool isLookingAnimationRunning = false;
     private bool isBlinkCoroutineRunning = false;
@@ -23,6 +25,7 @@ public class HudController2 : MonoBehaviour {
     private bool isFearCouroutineRunning = false;
 
     void Start() {
+        currentHpUi = GameObject.Find("HpCounterText").GetComponent<TextMeshProUGUI>();
         headAnimator = GameObject.Find("HeadAnimator").GetComponent<Animator>();
         LoadAnimatorControllers();
         UpdateAnimatorController();
@@ -32,13 +35,19 @@ public class HudController2 : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown(KeyCode.UpArrow)) {
             currentHP += 10;
+            currentHpUi.text = currentHP.ToString() + "%";
             UpdateAnimatorController();
             Debug.Log("Inreasing HP by 10" + ", current animator: " + headAnimator.runtimeAnimatorController.name + ", current HP: " + currentHP);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow)) {
             currentHP -= 10;
+            currentHpUi.text = currentHP.ToString() + "%";
             UpdateAnimatorController();
             Debug.Log("Decreasing HP by 10" + ", current animator: " + headAnimator.runtimeAnimatorController.name + ", current HP: " + currentHP);
+        }
+        if (currentHP <= 0) {
+            Debug.Log("Player is dead");
+            headAnimator.SetBool("isDead", true);
         }
     }
 
