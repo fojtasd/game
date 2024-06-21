@@ -7,7 +7,6 @@ public class LightControllerBasin : MonoBehaviour {
     public Animator bulbAnimator;
 
     public bool isBlinking = false;
-    // Default minimum is 1.0f and maximum is 5.0f
     public float minBlinkDelay = 1.0f;  // Minimum delay between blinks
     public float maxBlinkDelay = 5.0f;  // Maximum delay between blinks
     public bool isOn = false;
@@ -26,17 +25,14 @@ public class LightControllerBasin : MonoBehaviour {
             bulbAnimator.SetBool("isBlinking", true);
             StartCoroutine(BlinkRoutine());
         }
-
     }
 
     void OnEnable() {
-        WaterBasinTrigger.OnWaterBasinOpened += TurnOnLight;
-        WaterBasinTrigger.OnWaterBasinClosed += TurnOffLight;
+        WaterBasinTrigger.OnWaterBasinOpenedLight += ControlLight;
     }
 
     void OnDisable() {
-        WaterBasinTrigger.OnWaterBasinOpened -= TurnOnLight;
-        WaterBasinTrigger.OnWaterBasinClosed -= TurnOffLight;
+        WaterBasinTrigger.OnWaterBasinOpenedLight -= ControlLight;
     }
 
     private IEnumerator BlinkRoutine() {
@@ -59,25 +55,26 @@ public class LightControllerBasin : MonoBehaviour {
         }
     }
 
-    void TurnOnLight() {
-        bulbAnimator.SetBool("LightingOn", true);
-        bulbAnimator.SetBool("LightingOff", false);
-        if (isBlinking) {
-            StartCoroutine(BlinkRoutine());
+    void ControlLight(bool isOn) {
+        if (isOn) {
+            bulbAnimator.SetBool("LightingOn", true);
+            bulbAnimator.SetBool("LightingOff", false);
+            if (isBlinking) {
+                StartCoroutine(BlinkRoutine());
+            }
+            else {
+                StopCoroutine(BlinkRoutine());
+            }
+            bulbLight.enabled = true;
         }
         else {
-            StopCoroutine(BlinkRoutine());
+            bulbAnimator.SetBool("LightingOn", false);
+            bulbAnimator.SetBool("LightingOff", true);
+            if (isBlinking) {
+                StopCoroutine(BlinkRoutine());
+            }
+            bulbLight.enabled = false;
         }
-        bulbLight.enabled = true;
-    }
-
-    void TurnOffLight() {
-        bulbAnimator.SetBool("LightingOn", false);
-        bulbAnimator.SetBool("LightingOff", true);
-        if (isBlinking) {
-            StopCoroutine(BlinkRoutine());
-        }
-        bulbLight.enabled = false;
     }
 
     void AnimatorLightOn() {
@@ -87,6 +84,4 @@ public class LightControllerBasin : MonoBehaviour {
     void AnimatorLightOff() {
         bulbLight.enabled = false;
     }
-
-
 }

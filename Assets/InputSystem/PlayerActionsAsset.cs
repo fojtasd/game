@@ -44,6 +44,15 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press(pressPoint=0.5,behavior=2)"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""d25d3caf-15b5-4d5d-9248-efb1439ed28c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +141,17 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""10e3b67b-cd46-45fa-8015-9502fb6ad888"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -721,6 +741,7 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
         m_PlayerWalking = asset.FindActionMap("PlayerWalking", throwIfNotFound: true);
         m_PlayerWalking_Move = m_PlayerWalking.FindAction("Move", throwIfNotFound: true);
         m_PlayerWalking_Jump = m_PlayerWalking.FindAction("Jump", throwIfNotFound: true);
+        m_PlayerWalking_Newaction = m_PlayerWalking.FindAction("New action", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -796,12 +817,14 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
     private List<IPlayerWalkingActions> m_PlayerWalkingActionsCallbackInterfaces = new List<IPlayerWalkingActions>();
     private readonly InputAction m_PlayerWalking_Move;
     private readonly InputAction m_PlayerWalking_Jump;
+    private readonly InputAction m_PlayerWalking_Newaction;
     public struct PlayerWalkingActions
     {
         private @PlayerActionsAsset m_Wrapper;
         public PlayerWalkingActions(@PlayerActionsAsset wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_PlayerWalking_Move;
         public InputAction @Jump => m_Wrapper.m_PlayerWalking_Jump;
+        public InputAction @Newaction => m_Wrapper.m_PlayerWalking_Newaction;
         public InputActionMap Get() { return m_Wrapper.m_PlayerWalking; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -817,6 +840,9 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @Newaction.started += instance.OnNewaction;
+            @Newaction.performed += instance.OnNewaction;
+            @Newaction.canceled += instance.OnNewaction;
         }
 
         private void UnregisterCallbacks(IPlayerWalkingActions instance)
@@ -827,6 +853,9 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @Newaction.started -= instance.OnNewaction;
+            @Newaction.performed -= instance.OnNewaction;
+            @Newaction.canceled -= instance.OnNewaction;
         }
 
         public void RemoveCallbacks(IPlayerWalkingActions instance)
@@ -1011,6 +1040,7 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnNewaction(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

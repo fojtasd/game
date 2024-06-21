@@ -41,7 +41,7 @@ public class SimpleDialogBox : MonoBehaviour {
     /// <param name="duration">How long should message be visible</param>
     /// <param name="voiceClipName">Name of the clip to play. If empty string (default), no clip. If "random" inputed, random clip is played.</param>
     /// <returns>Mothing, its Courutine</returns>
-    private IEnumerator SayLineCoroutine(string line, float duration = 10f, string voiceClipName = "") {
+    private IEnumerator SayLineCoroutine(string line, float duration = 5f, string voiceClipName = "") {
         isTalking = true;
         _text.SetText(line);
         _headAnimator.SetBool("isTalking", true);
@@ -77,6 +77,7 @@ public class SimpleDialogBox : MonoBehaviour {
         playerSoundsLibrary.StopPlayingAudioClip();
         isTalking = false;
         skipBubble = false;
+        _text.SetText("");
         _group.alpha = 0;
     }
 }

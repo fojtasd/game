@@ -1,13 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaterBasinTrigger : MonoBehaviour {
     public Animator waterBasinAnimator;
     public SimpleDialogBox dialogBox;
-    public delegate void WaterBasinAction();
-    public static event WaterBasinAction OnWaterBasinOpened;
-    public static event WaterBasinAction OnWaterBasinClosed;
+    public delegate void WaterBasinAction(bool isOn);
+    public static event WaterBasinAction OnWaterBasinOpenedLight;
 
     private bool isInside = false;
     public CustomCursor customCursor;
@@ -57,14 +55,14 @@ public class WaterBasinTrigger : MonoBehaviour {
             waterBasinAnimator.SetBool("isOpening", true);
             waterBasinAnimator.SetBool("isClosing", false);
             PlaySound();
-            dialogBox.SayLine("What the fuck is this filth?", voiceClipName: "a");
-            OnWaterBasinOpened?.Invoke();
+            dialogBox.SayLine("What the fuck is this filth? aaaa  aaaaa aaaaa aa aa a a a", voiceClipName: "a");
+            OnWaterBasinOpenedLight?.Invoke(true);
         }
         else {
             waterBasinAnimator.SetBool("isOpening", false);
             waterBasinAnimator.SetBool("isClosing", true);
             PlaySound();
-            OnWaterBasinClosed?.Invoke();
+            OnWaterBasinOpenedLight?.Invoke(false);
         }
 
         while (waterBasinAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f) {

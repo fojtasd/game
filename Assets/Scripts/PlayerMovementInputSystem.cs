@@ -52,6 +52,7 @@ public class PlayerMovementInputSystem : MonoBehaviour {
     }
 
     public void Move(InputAction.CallbackContext ctx) {
+        Debug.Log("Kurva zkurvená" + ctx.ReadValue<Vector2>());
         rigidBody.velocity = ctx.ReadValue<Vector2>() * speed;
         lastPosition = ctx.ReadValue<Vector2>() * speed;
         OnWalkEvent.Invoke(ctx.ReadValue<Vector2>().x);
