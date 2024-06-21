@@ -55,7 +55,7 @@ public class WaterBasinTrigger : MonoBehaviour {
             waterBasinAnimator.SetBool("isOpening", true);
             waterBasinAnimator.SetBool("isClosing", false);
             PlaySound();
-            dialogBox.SayLine("What the fuck is this filth? aaaa  aaaaa aaaaa aa aa a a a", voiceClipName: "a");
+            dialogBox.SayLine("What the fuck is this filth?", voiceClipName: "a");
             OnWaterBasinOpenedLight?.Invoke(true);
         }
         else {

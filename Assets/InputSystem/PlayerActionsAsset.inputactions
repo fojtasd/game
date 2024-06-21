@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "New action",
+                    "name": "Aim",
                     "type": "Button",
                     "id": "d25d3caf-15b5-4d5d-9248-efb1439ed28c",
                     "expectedControlType": "Button",
@@ -128,8 +128,8 @@
                     "path": "",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
