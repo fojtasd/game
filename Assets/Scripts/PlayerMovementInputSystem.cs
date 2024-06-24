@@ -17,6 +17,15 @@ public class PlayerMovementInputSystem : MonoBehaviour {
     private bool isGrounded;
     private bool isFalling;
 
+    ////////////////// AGRO/PASSIVE ////////////////////
+    public enum AgroState {
+        Passive,
+        Agro
+    }
+    private AgroState agroState = AgroState.Passive;
+
+    GameObject playerAimWeapon;
+
     //////////////////// EVENTS ////////////////////
     public delegate void WalkingDirection(float walkingDirection);
     public static event WalkingDirection OnWalkEvent;
@@ -34,6 +43,7 @@ public class PlayerMovementInputSystem : MonoBehaviour {
     ///////////////// UNITY METHODS /////////////////
     void Awake() {
         rigidBody = rigidBody != null ? rigidBody : GetComponent<Rigidbody2D>();
+        playerAimWeapon = GameObject.Find("Aim");
     }
 
     void Update() {
@@ -45,9 +55,28 @@ public class PlayerMovementInputSystem : MonoBehaviour {
     void FixedUpdate() {
         CheckGround();
         CheckAndInvokeFallingEvent();
+        CheckAgroState();
 
         if (IsObstacleInDirection(lastPosition)) {
             Angry.Invoke(1.5f);
+        }
+    }
+
+    public void SetAgroState(InputAction.CallbackContext ctx) {
+        if (agroState == AgroState.Agro) {
+            agroState = AgroState.Passive;
+        }
+        else {
+            agroState = AgroState.Agro;
+        }
+    }
+
+    private void CheckAgroState() {
+        if (agroState == AgroState.Agro) {
+            playerAimWeapon.SetActive(true);
+        }
+        else {
+            playerAimWeapon.SetActive(false);
         }
     }
 

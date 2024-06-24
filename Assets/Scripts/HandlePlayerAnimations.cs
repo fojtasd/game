@@ -7,6 +7,8 @@ public class HandlePlayerAnimations : MonoBehaviour {
     private Animator animator;
     private float idleTime = 0f;
     private bool isFalling;
+    private float noWalkingTime = 0f;
+    private float secondsAfterIdleIsSet = 10f;
 
     //////////////////// EVENTS ////////////////////
     public delegate void EyesDirection(float duration = 0.5f);
@@ -19,6 +21,10 @@ public class HandlePlayerAnimations : MonoBehaviour {
     void Start() {
         animator = GetComponent<Animator>();
         StartCoroutine(MeasureIdleTime());
+    }
+
+    void Update() {
+        SetIdleIfNotWalkingForAmountOfTime();
     }
 
     void OnEnable() {
@@ -38,8 +44,8 @@ public class HandlePlayerAnimations : MonoBehaviour {
         else if (walkingDirection < 0) {
             SetWalkingLeft();
         }
-        else if (walkingDirection == 0) {
-            SetIdle();
+        else {
+            SetNoWalking();
         }
     }
 
@@ -63,6 +69,9 @@ public class HandlePlayerAnimations : MonoBehaviour {
 
     private void SetIdle() {
         animator.SetTrigger("idle-trigger");
+    }
+
+    private void SetNoWalking() {
         animator.SetBool("isWalking", false);
         animator.SetBool("isWalkingRight", false);
         animator.SetBool("isWalkingLeft", false);
@@ -76,6 +85,7 @@ public class HandlePlayerAnimations : MonoBehaviour {
             }
             yield return new WaitForSeconds(1f);
             idleTime += 1f;
+
             if (IsInState("idle")) {
                 if (idleTime >= 5f) {
                     int randomAnimationNumber = Random.Range(0, 2);
@@ -86,6 +96,16 @@ public class HandlePlayerAnimations : MonoBehaviour {
                         animator.SetTrigger("smoking-trigger");
                     }
                 }
+            }
+        }
+    }
+
+    private void SetIdleIfNotWalkingForAmountOfTime() {
+        if (IsInState("facing-right") || IsInState("facing-left")) {
+            noWalkingTime += Time.deltaTime;
+            if (noWalkingTime >= secondsAfterIdleIsSet) {
+                animator.SetTrigger("idle-trigger");
+                noWalkingTime = 0f;
             }
         }
     }

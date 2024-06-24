@@ -46,9 +46,18 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Aim"",
+                    ""name"": ""Shoot"",
                     ""type"": ""Button"",
-                    ""id"": ""d25d3caf-15b5-4d5d-9248-efb1439ed28c"",
+                    ""id"": ""90633a87-0bfb-4806-a69d-b56daf137932"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DrawWeapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""ef5272fb-27e5-40a2-b5dd-0027a58e67fb"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -146,12 +155,23 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""10e3b67b-cd46-45fa-8015-9502fb6ad888"",
-                    ""path"": """",
+                    ""id"": ""7becf3e2-bb83-4fdc-a04b-812f9c0e394f"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Aim"",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea87ca89-4bf3-4cf3-b347-a10f82582cae"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DrawWeapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -741,7 +761,8 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
         m_PlayerWalking = asset.FindActionMap("PlayerWalking", throwIfNotFound: true);
         m_PlayerWalking_Move = m_PlayerWalking.FindAction("Move", throwIfNotFound: true);
         m_PlayerWalking_Jump = m_PlayerWalking.FindAction("Jump", throwIfNotFound: true);
-        m_PlayerWalking_Aim = m_PlayerWalking.FindAction("Aim", throwIfNotFound: true);
+        m_PlayerWalking_Shoot = m_PlayerWalking.FindAction("Shoot", throwIfNotFound: true);
+        m_PlayerWalking_DrawWeapon = m_PlayerWalking.FindAction("DrawWeapon", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -817,14 +838,16 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
     private List<IPlayerWalkingActions> m_PlayerWalkingActionsCallbackInterfaces = new List<IPlayerWalkingActions>();
     private readonly InputAction m_PlayerWalking_Move;
     private readonly InputAction m_PlayerWalking_Jump;
-    private readonly InputAction m_PlayerWalking_Aim;
+    private readonly InputAction m_PlayerWalking_Shoot;
+    private readonly InputAction m_PlayerWalking_DrawWeapon;
     public struct PlayerWalkingActions
     {
         private @PlayerActionsAsset m_Wrapper;
         public PlayerWalkingActions(@PlayerActionsAsset wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_PlayerWalking_Move;
         public InputAction @Jump => m_Wrapper.m_PlayerWalking_Jump;
-        public InputAction @Aim => m_Wrapper.m_PlayerWalking_Aim;
+        public InputAction @Shoot => m_Wrapper.m_PlayerWalking_Shoot;
+        public InputAction @DrawWeapon => m_Wrapper.m_PlayerWalking_DrawWeapon;
         public InputActionMap Get() { return m_Wrapper.m_PlayerWalking; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -840,9 +863,12 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
-            @Aim.started += instance.OnAim;
-            @Aim.performed += instance.OnAim;
-            @Aim.canceled += instance.OnAim;
+            @Shoot.started += instance.OnShoot;
+            @Shoot.performed += instance.OnShoot;
+            @Shoot.canceled += instance.OnShoot;
+            @DrawWeapon.started += instance.OnDrawWeapon;
+            @DrawWeapon.performed += instance.OnDrawWeapon;
+            @DrawWeapon.canceled += instance.OnDrawWeapon;
         }
 
         private void UnregisterCallbacks(IPlayerWalkingActions instance)
@@ -853,9 +879,12 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
-            @Aim.started -= instance.OnAim;
-            @Aim.performed -= instance.OnAim;
-            @Aim.canceled -= instance.OnAim;
+            @Shoot.started -= instance.OnShoot;
+            @Shoot.performed -= instance.OnShoot;
+            @Shoot.canceled -= instance.OnShoot;
+            @DrawWeapon.started -= instance.OnDrawWeapon;
+            @DrawWeapon.performed -= instance.OnDrawWeapon;
+            @DrawWeapon.canceled -= instance.OnDrawWeapon;
         }
 
         public void RemoveCallbacks(IPlayerWalkingActions instance)
@@ -1040,7 +1069,8 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnAim(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
+        void OnDrawWeapon(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

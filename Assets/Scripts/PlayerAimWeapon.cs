@@ -2,36 +2,119 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAimWeapon : MonoBehaviour {
-    // Start is called before the first frame update
+    public event EventHandler<OnShootEventArgs> OnShoot;
+    public class OnShootEventArgs : EventArgs {
+        public Vector3 gunEndPointPosition;
+        public Vector3 shootPosition;
+    }
     private Transform aimTransform;
-
+    private Transform aimGunEndPointTransform;
     private Animator aimAnimator;
+    private Animator shotgunAnimator;
+
+    private bool facingRight = true;
+    private bool canShoot = true;
+
+    private float shootingTime = 0f;
+    private const float shootingCooldown = 1f;
 
     private void Awake() {
         aimTransform = transform.Find("Aim");
-        aimAnimator = aimTransform.GetComponent<Animator>();
+        aimAnimator = aimTransform.Find("Muzzle").GetComponent<Animator>();
+        shotgunAnimator = aimTransform.GetComponent<Animator>();
+        aimGunEndPointTransform = aimTransform.Find("GunEndPointPosition");
     }
 
     private void Update() {
         HandleAiming();
-        HandleShooting();
+        Cooldown();
+    }
+
+    void OnEnable() {
+        PlayerMovementInputSystem.OnWalkEvent += SetFacingDirection;
+    }
+
+    void OnDisable() {
+        PlayerMovementInputSystem.OnWalkEvent -= SetFacingDirection;
+    }
+
+    private void SetFacingDirection(float walkingDirection) {
+        if (walkingDirection > 0) {
+            facingRight = true;
+        }
+        else if (walkingDirection < 0) {
+            facingRight = false;
+        }
     }
 
     private void HandleAiming() {
         Vector3 mousePosition = GetMouseWorldPosition();
         Vector3 aimDirection = (mousePosition - transform.position).normalized;
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-        aimTransform.eulerAngles = new Vector3(0, 0, angle);
-    }
+        //Debug.Log(angle);
+        if (facingRight) {
+            //TODO fix the angle
 
-    private void HandleShooting() {
-        if (Input.GetMouseButtonDown(0)) {
-            aimAnimator.SetTrigger("Shoot");
+            if ((angle >= 0 && angle <= 50) || (angle <= 0 && angle >= -50)) {
+                aimTransform.eulerAngles = new Vector3(0, 0, angle);
+            }
+            else if (angle > 50 && angle < 180) {
+                aimTransform.eulerAngles = new Vector3(0, 0, angle);
+            }
+            else if (angle > -180 && angle < -50) {
+                aimTransform.eulerAngles = new Vector3(0, 0, -50);
+            }
+        }
+        else {
+            if ((angle >= 0 && angle <= 50) || (angle <= 0 && angle >= -50)) {
+                aimTransform.eulerAngles = new Vector3(0, 180, angle);
+            }
+            else if (angle > 50 && angle < 180) {
+                aimTransform.eulerAngles = new Vector3(0, 180, angle);
+            }
+            else if (angle > -180 && angle < -50) {
+                aimTransform.eulerAngles = new Vector3(0, 180, -50);
+            }
         }
     }
 
+    public void HandleShooting(InputAction.CallbackContext ctx) {
+        if (IsInState("AimShoot_Shoot")) {
+            return;
+        }
+        if (canShoot && ctx.started) {
+            aimAnimator.SetTrigger("Shoot");
+            OnShoot?.Invoke(this, new OnShootEventArgs {
+                gunEndPointPosition = aimGunEndPointTransform.position,
+                shootPosition = GetMouseWorldPosition()
+            });
+            shootingTime = 0f;
+            StartCoroutine(WaitAndPump());
+        }
+    }
+
+    private void Cooldown() {
+        shootingTime += Time.deltaTime;
+        if (shootingTime > shootingCooldown) {
+            canShoot = true;
+        }
+        else {
+            canShoot = false;
+        }
+    }
+
+    private IEnumerator WaitAndPump() {
+        yield return new WaitForSeconds(0.2f);
+        shotgunAnimator.SetTrigger("Pump");
+    }
+
+    bool IsInState(string stateName) {
+        AnimatorStateInfo stateInfo = aimAnimator.GetCurrentAnimatorStateInfo(0);
+        return stateInfo.IsName(stateName);
+    }
 
     public static Vector3 GetMouseWorldPosition() {
         Vector3 mouseScreenPosition = Input.mousePosition; // Get mouse position in screen space
