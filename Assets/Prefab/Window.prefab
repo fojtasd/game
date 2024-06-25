@@ -30,7 +30,9 @@ Transform:
   m_LocalPosition: {x: -0.0768, y: -0.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 823027355778171831}
+  - {fileID: 5091463773702172083}
   m_Father: {fileID: 1474481770332625982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4973574511929435272
@@ -139,8 +141,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8228760608421972664}
-  - {fileID: 823027355778171831}
-  - {fileID: 5091463773702172083}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2066220927553843494
@@ -152,7 +152,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5091463773702172083}
-  - component: {fileID: 7754007059454366210}
   m_Layer: 0
   m_Name: Light 2D
   m_TagString: Untagged
@@ -169,64 +168,12 @@ Transform:
   m_GameObject: {fileID: 2066220927553843494}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05150795, y: -0.3641175, z: 3.4257076}
+  m_LocalPosition: {x: 0.025292054, y: -0.0541175, z: 3.4257076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1474481770332625982}
+  m_Father: {fileID: 8228760608421972664}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7754007059454366210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066220927553843494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
-  m_LightType: 1
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.454
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.34
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 4b5f5e4d
-  m_LightCookieSprite: {fileID: 0}
-  m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 0
-  m_NormalMapDistance: 3
-  m_NormalMapQuality: 2
-  m_UseNormalMap: 0
-  m_ShadowsEnabled: 0
-  m_ShadowIntensity: 0.75
-  m_ShadowSoftness: 0.3
-  m_ShadowSoftnessFalloffIntensity: 0.5
-  m_ShadowVolumeIntensityEnabled: 0
-  m_ShadowVolumeIntensity: 0.75
-  m_LocalBounds:
-    m_Center: {x: -0.028700009, y: 0.04965, z: 0}
-    m_Extent: {x: 0.51780003, y: 0.40455002, z: 0}
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.22
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.3222828, y: -0.13390222, z: 0}
-  - {x: 0.26896715, y: -0.12679353, z: 0}
-  - {x: 0.2654128, y: 0.23342398, z: 0}
-  - {x: -0.32583714, y: 0.23342401, z: 0}
 --- !u!1 &8686414241070577095
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +188,7 @@ GameObject:
   - component: {fileID: 127833603127667419}
   m_Layer: 0
   m_Name: window-trigger
-  m_TagString: Untagged
+  m_TagString: Interactables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,12 +201,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8686414241070577095}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.795, y: -0.917, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.87180007, y: -0.607, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1474481770332625982}
+  m_Father: {fileID: 8228760608421972664}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7439359688182948565
 BoxCollider2D:
@@ -416,5 +363,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58dff0000d756e544b1c66c35e944d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windowAnimator: {fileID: 4494577333731902204}
-  customCursor: {fileID: 0}
+  messageToSay: 
+  audioClipName: 0

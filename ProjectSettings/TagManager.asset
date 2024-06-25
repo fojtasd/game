@@ -7,6 +7,10 @@ TagManager:
   - Cursor
   - Head
   - Settings
+  - AimController
+  - HeadController
+  - HealthBar
+  - Interactables
   layers:
   - Default
   - TransparentFX
@@ -49,6 +53,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3282928363
     locked: 0
   - name: PrePlayer
     uniqueID: 2022416493

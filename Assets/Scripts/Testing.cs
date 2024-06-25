@@ -11,13 +11,10 @@ public class Testing : MonoBehaviour {
     }
 
     private void PlayerAimWeapon_OnShoot(object sender, PlayerAimWeapon.OnShootEventArgs e) {
-        Debug.Log("mouse position: " + e.shootPosition);
-        Debug.Log("shoot postion: " + e.gunEndPointPosition);
-        Debug.DrawLine(e.shootPosition, e.gunEndPointPosition, Color.white, 5f);
         CreateWeaponTracer(e.shootPosition, e.gunEndPointPosition);
     }
 
     private void CreateWeaponTracer(Vector3 shootPosition, Vector3 gunEndPointPosition) {
-        Debug.DrawLine(gunEndPointPosition, shootPosition, Color.white, 5f);
+
     }
 }

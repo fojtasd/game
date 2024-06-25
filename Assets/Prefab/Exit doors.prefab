@@ -30,7 +30,8 @@ Transform:
   m_LocalPosition: {x: 2.575, y: -0.613, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 823027355778171831}
   m_Father: {fileID: 1474481770332625982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4973574511929435272
@@ -139,7 +140,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8228760608421972664}
-  - {fileID: 823027355778171831}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8686414241070577095
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 127833603127667419}
   m_Layer: 0
   m_Name: door-trigger
-  m_TagString: Untagged
+  m_TagString: Interactables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,12 +169,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8686414241070577095}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.649, y: -0.917, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.07399988, y: -0.30400008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1474481770332625982}
+  m_Father: {fileID: 8228760608421972664}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7439359688182948565
 BoxCollider2D:
@@ -332,4 +332,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windowAnimator: {fileID: 4494577333731902204}
-  customCursor: {fileID: 0}
