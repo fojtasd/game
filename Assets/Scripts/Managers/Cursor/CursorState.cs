@@ -1,5 +1,4 @@
-public enum CursorState
-{
+public enum CursorState {
     Normal,
     Aim,
     Interaction

@@ -65,8 +65,7 @@ public class PlayerAimWeapon : MonoBehaviour {
     void SetFacingDirection(float walkingDirection) {
         if (walkingDirection > 0) {
             facingRight = true;
-        }
-        else if (walkingDirection < 0) {
+        } else if (walkingDirection < 0) {
             facingRight = false;
         }
     }
@@ -81,22 +80,17 @@ public class PlayerAimWeapon : MonoBehaviour {
 
             if ((angle >= 0 && angle <= 50) || (angle <= 0 && angle >= -50)) {
                 aimTransform.eulerAngles = new Vector3(0, 0, angle);
-            }
-            else if (angle > 50 && angle < 180) {
+            } else if (angle > 50 && angle < 180) {
                 aimTransform.eulerAngles = new Vector3(0, 0, angle);
-            }
-            else if (angle > -180 && angle < -50) {
+            } else if (angle > -180 && angle < -50) {
                 aimTransform.eulerAngles = new Vector3(0, 0, -50);
             }
-        }
-        else {
+        } else {
             if ((angle >= 0 && angle <= 50) || (angle <= 0 && angle >= -50)) {
                 aimTransform.eulerAngles = new Vector3(0, 180, angle);
-            }
-            else if (angle > 50 && angle < 180) {
+            } else if (angle > 50 && angle < 180) {
                 aimTransform.eulerAngles = new Vector3(0, 180, angle);
-            }
-            else if (angle > -180 && angle < -50) {
+            } else if (angle > -180 && angle < -50) {
                 aimTransform.eulerAngles = new Vector3(0, 180, -50);
             }
         }
@@ -106,8 +100,7 @@ public class PlayerAimWeapon : MonoBehaviour {
         shootingTime += Time.deltaTime;
         if (shootingTime > shootingCooldown) {
             canShoot = true;
-        }
-        else {
+        } else {
             canShoot = false;
         }
     }

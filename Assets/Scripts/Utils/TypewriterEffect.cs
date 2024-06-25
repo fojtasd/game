@@ -43,8 +43,7 @@ public class TypewriterEffect : MonoBehaviour {
 
             if (IsPunctuation(currentChar)) {
                 yield return _punctuationDelay;
-            }
-            else {
+            } else {
                 yield return _normalDelay;
             }
         }

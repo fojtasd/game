@@ -16,8 +16,7 @@ public class LightControllerBasin : MonoBehaviour {
         if (isOn) {
             bulbAnimator.SetBool("LightingOn", true);
             bulbAnimator.SetBool("LightingOff", false);
-        }
-        else {
+        } else {
             bulbAnimator.SetBool("LightingOff", true);
             bulbAnimator.SetBool("LightingOn", false);
         }
@@ -47,8 +46,7 @@ public class LightControllerBasin : MonoBehaviour {
 
                 if (randomBlink == 0) {
                     bulbAnimator.SetTrigger("HeavyBlink");
-                }
-                else {
+                } else {
                     bulbAnimator.SetTrigger("DecentBlink");
                 }
             }
@@ -61,13 +59,11 @@ public class LightControllerBasin : MonoBehaviour {
             bulbAnimator.SetBool("LightingOff", false);
             if (isBlinking) {
                 StartCoroutine(BlinkRoutine());
-            }
-            else {
+            } else {
                 StopCoroutine(BlinkRoutine());
             }
             bulbLight.enabled = true;
-        }
-        else {
+        } else {
             bulbAnimator.SetBool("LightingOn", false);
             bulbAnimator.SetBool("LightingOff", true);
             if (isBlinking) {

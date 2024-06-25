@@ -42,8 +42,7 @@ public class CursorManager {
         RaycastHit2D hit = Physics2D.Raycast(cursorPos, Vector2.zero);
         if (hit.collider != null && hit.collider.CompareTag("Interactables")) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

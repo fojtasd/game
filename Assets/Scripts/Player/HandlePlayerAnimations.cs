@@ -38,11 +38,9 @@ public class HandlePlayerAnimations : MonoBehaviour {
     void AdjustWalkAnimation(float walkingDirection = 0f) {
         if (walkingDirection > 0) {
             SetWalkingRight();
-        }
-        else if (walkingDirection < 0) {
+        } else if (walkingDirection < 0) {
             SetWalkingLeft();
-        }
-        else {
+        } else {
             SetNoWalking();
         }
     }
@@ -89,8 +87,7 @@ public class HandlePlayerAnimations : MonoBehaviour {
                     int randomAnimationNumber = Random.Range(0, 2);
                     if (randomAnimationNumber == 0) {
                         animator.SetTrigger("check-watch-trigger");
-                    }
-                    else {
+                    } else {
                         animator.SetTrigger("smoking-trigger");
                     }
                 }

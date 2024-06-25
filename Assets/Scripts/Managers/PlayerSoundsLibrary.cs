@@ -16,8 +16,7 @@ public class PlayerSoundsLibrary : MonoBehaviour {
             AudioClip clip = Resources.Load<AudioClip>(kvp.Value);
             if (clip != null) {
                 audioClips.Add(kvp.Key, clip);
-            }
-            else {
+            } else {
                 Debug.LogError("Failed to load audio clip: " + kvp.Value);
             }
         }
@@ -26,11 +25,9 @@ public class PlayerSoundsLibrary : MonoBehaviour {
     public void PlayAudioClip(AudioClipName clipName) {
         if (clipName == AudioClipName.None) {
             return;
-        }
-        else if (clipName == AudioClipName.Random) {
+        } else if (clipName == AudioClipName.Random) {
             PlayRandomClip();
-        }
-        else {
+        } else {
             audioSource.clip = audioClips[clipName];
             audioSource.Play();
         }

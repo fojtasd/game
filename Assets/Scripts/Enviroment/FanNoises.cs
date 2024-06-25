@@ -15,8 +15,7 @@ public class FanNoises : MonoBehaviour {
             if (!audioSource.isPlaying) {
                 audioSource.Play();
             }
-        }
-        else {
+        } else {
             if (audioSource.isPlaying) {
                 audioSource.Stop();
             }

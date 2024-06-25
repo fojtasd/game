@@ -36,8 +36,7 @@ public class FanTrigger : MonoBehaviour {
             fanAnimator.SetBool("isOff", false);
             Utils.Say(messageToSay, voiceClipName: audioClipName);
             PlaySound();
-        }
-        else {
+        } else {
             fanAnimator.SetBool("isOn", false);
             fanAnimator.SetBool("isOff", true);
             PlaySound();

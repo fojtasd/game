@@ -72,14 +72,11 @@ public class PlayerMovementInputSystem : MonoBehaviour {
         if (agroState == AgroState.Agro) {
             agroState = AgroState.Passive;
             HolsterWeaponEvent.Invoke();
-        }
-        else {
+        } else {
             agroState = AgroState.Agro;
             DrawWeaponEvent.Invoke();
         }
     }
-
-
 
     public void Move(InputAction.CallbackContext ctx) {
         rigidBody.velocity = ctx.ReadValue<Vector2>() * speed;
@@ -91,13 +88,11 @@ public class PlayerMovementInputSystem : MonoBehaviour {
         if (ctx.started && isGrounded) {
             isHoldingJump = true;
             jumpHoldTime = 0f;
-        }
-        else if (ctx.canceled && isGrounded) {
+        } else if (ctx.canceled && isGrounded) {
             isHoldingJump = false;
             if (jumpHoldTime >= maxJumpHoldTime) {
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, longJumpForce);
-            }
-            else {
+            } else {
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, shortJumpForce);
             }
         }
@@ -110,8 +105,7 @@ public class PlayerMovementInputSystem : MonoBehaviour {
     void CheckAgroState() {
         if (agroState == AgroState.Agro) {
             playerAimWeapon.SetActive(true);
-        }
-        else {
+        } else {
             playerAimWeapon.SetActive(false);
         }
     }
@@ -120,8 +114,7 @@ public class PlayerMovementInputSystem : MonoBehaviour {
         if (!isGrounded && rigidBody.velocity.y < 0) {
             isFalling = true;
             FallingEvent.Invoke(isFalling);
-        }
-        else {
+        } else {
             isFalling = false;
             FallingEvent.Invoke(isFalling);
         }

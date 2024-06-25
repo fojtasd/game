@@ -14,8 +14,7 @@ public class Shotgun : MonoBehaviour {
     void Shoot() {
         if (audioSource != null && audioSource.clip != null) {
             audioSource.Play();
-        }
-        else {
+        } else {
             Debug.LogError("AudioSource or AudioClip is missing.");
         }
     }

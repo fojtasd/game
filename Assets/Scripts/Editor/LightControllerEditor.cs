@@ -1,7 +1,8 @@
 using UnityEditor;
 
 [CustomEditor(typeof(LightController))]
-public class LightControllerEditor : Editor {
+public class LightControllerEditor : Editor
+{
 
     SerializedProperty bulbLightProp;
     SerializedProperty bulbAnimatorProp;
@@ -10,7 +11,8 @@ public class LightControllerEditor : Editor {
     SerializedProperty maxBlinkDelayProp;
     SerializedProperty isOnProp;
 
-    public override void OnInspectorGUI() {
+    public override void OnInspectorGUI()
+    {
         // Update the serialized object's representation
         serializedObject.Update();
 
@@ -20,11 +22,13 @@ public class LightControllerEditor : Editor {
         EditorGUILayout.PropertyField(isOnProp);
 
         // Disable 'Is Blinking' field if 'Is On' is false
-        using (new EditorGUI.DisabledGroupScope(!isOnProp.boolValue)) {
+        using (new EditorGUI.DisabledGroupScope(!isOnProp.boolValue))
+        {
             EditorGUILayout.PropertyField(isBlinkingProp);
 
             // Disable 'Min Blink Delay' and 'Max Blink Delay' fields if 'Is Blinking' is false
-            using (new EditorGUI.DisabledGroupScope(!isBlinkingProp.boolValue)) {
+            using (new EditorGUI.DisabledGroupScope(!isBlinkingProp.boolValue))
+            {
                 EditorGUILayout.PropertyField(minBlinkDelayProp);
                 EditorGUILayout.PropertyField(maxBlinkDelayProp);
             }
@@ -34,7 +38,8 @@ public class LightControllerEditor : Editor {
         serializedObject.ApplyModifiedProperties();
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         // Link the properties with their serialized counterparts
         bulbLightProp = serializedObject.FindProperty("bulbLight");
         bulbAnimatorProp = serializedObject.FindProperty("bulbAnimator");

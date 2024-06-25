@@ -72,8 +72,7 @@ public class MessageToSay : MonoBehaviour, IPointerClickHandler {
     public void OnPointerClick(PointerEventData eventData) {
         if (eventData.button == PointerEventData.InputButton.Left) {
             typewriterEffect.Skip();
-        }
-        else if (eventData.button == PointerEventData.InputButton.Right) {
+        } else if (eventData.button == PointerEventData.InputButton.Right) {
             CleanupBubble();
         }
     }

@@ -40,8 +40,7 @@ public class WaterBasinTrigger : MonoBehaviour {
             PlaySound();
             Utils.Say(messageToSay, voiceClipName: audioClipName);
             OnWaterBasinOpenedLight?.Invoke(true);
-        }
-        else {
+        } else {
             waterBasinAnimator.SetBool("isOpening", false);
             waterBasinAnimator.SetBool("isClosing", true);
             PlaySound();

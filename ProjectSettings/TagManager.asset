@@ -11,6 +11,7 @@ TagManager:
   - HeadController
   - HealthBar
   - Interactables
+  - Item
   layers:
   - Default
   - TransparentFX

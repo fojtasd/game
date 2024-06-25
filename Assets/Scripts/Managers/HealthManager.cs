@@ -22,9 +22,6 @@ public class HealthManager {
 
     public void TakeDamage(int damageAmount) {
         currentHealth -= damageAmount;
-        if (currentHealth < 0) {
-            currentHealth = 0;
-        }
     }
 
     public void Heal(int healAmount) {
@@ -42,20 +39,15 @@ public class HealthManager {
         float healthPercentage = GetHealthPercentage();
         if (healthPercentage > 0.8f) {
             return HealthState.Healthy;
-        }
-        else if (healthPercentage > 0.6f) {
+        } else if (healthPercentage > 0.6f) {
             return HealthState.SlighlyHurt;
-        }
-        else if (healthPercentage > 0.4f) {
+        } else if (healthPercentage > 0.4f) {
             return HealthState.Hurt;
-        }
-        else if (healthPercentage > 0.2f) {
+        } else if (healthPercentage > 0.2f) {
             return HealthState.BadlyHurt;
-        }
-        else if (healthPercentage > 0f) {
+        } else if (healthPercentage > 0f) {
             return HealthState.Critical;
-        }
-        else {
+        } else {
             return HealthState.Death;
         }
     }

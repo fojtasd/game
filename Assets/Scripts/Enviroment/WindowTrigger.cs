@@ -35,8 +35,7 @@ public class WindowTrigger : MonoBehaviour {
             windowAnimator.SetBool("isOpening", true);
             windowAnimator.SetBool("isClosing", false);
             PlaySound();
-        }
-        else {
+        } else {
             windowAnimator.SetBool("isOpening", false);
             windowAnimator.SetBool("isClosing", true);
             PlaySound();
