@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: cfb97b98d5a92f84b9e9a6c434489ef1
+guid: 2572b285c4a8b0a42a9618b037000438
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3695304636516676417
-    second: shotgun + shotgun shell_0
-  - first:
-      213: -1267918212887898305
-    second: shotgun + shotgun shell_1
-  - first:
-      213: -2476558496820324521
-    second: shotgun + shotgun shell_2
+      213: -7707901220252787486
+    second: medkit-small_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -119,127 +113,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bigger-shell
+      name: medkit-small_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 36
-        width: 2
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1433e640dfb584330800000000000000
-      internalID: 3695304636516676417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun2
-      rect:
-        serializedVersion: 2
-        x: 106
-        y: 71
-        width: 56
+        x: 0
+        y: 0
+        width: 13
         height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f3791946a13776ee0800000000000000
-      internalID: -1267918212887898305
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 71
-        width: 56
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7579c832b2f71add0800000000000000
-      internalID: -2476558496820324521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun1
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 71
-        width: 56
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 841c7c050f381df448478f7fcd5daa3c
-      internalID: -624436208
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: smaller-shell
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 36
-        width: 1
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 489dc0b0c1764e843b6a5c225f9200bb
-      internalID: -1195948406
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shells-pack
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 37
-        width: 7
-        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6b83b0d9547a5d14a8e0f2d9b97ff520
-      internalID: 1798547626
+      spriteID: 2ec580bada8080590800000000000000
+      internalID: -7707901220252787486
       vertices: []
       indices: 
       edges: []
@@ -247,7 +136,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 478b59e5eb7695140b8afeb01298996b
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -255,12 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bigger-shell: 3695304636516676417
-      shells-pack: 1798547626
-      shotgun1: -624436208
-      shotgun2: -1267918212887898305
-      shotgun3: -2476558496820324521
-      smaller-shell: -1195948406
+      medkit-small_0: -7707901220252787486
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

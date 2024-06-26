@@ -12,6 +12,9 @@ TagManager:
   - HealthBar
   - Interactables
   - Item
+  - InventoryCanvas
+  - PlayerStats
+  - AmmoBar
   layers:
   - Default
   - TransparentFX

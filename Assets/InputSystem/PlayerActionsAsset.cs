@@ -187,7 +187,7 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0f24fdb8-90f7-4584-9541-43a5f34418dc"",
-                    ""path"": ""<Keyboard>/i"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
