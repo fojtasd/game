@@ -1,15 +1,15 @@
 using UnityEngine;
-using System.Collections.Generic;
-using System;
 
 public abstract class ItemSOBase : ScriptableObject {
     protected HealthManager healthManager;
     protected AmmoManager ammoManager;
+    public Sprite emptySprite;
 
     public void Setup(HealthManager healthManager, AmmoManager ammoManager) {
         this.healthManager = healthManager;
         this.ammoManager = ammoManager;
+        emptySprite = Resources.Load<Sprite>("Sprites/emptySprite");
     }
 
-    public abstract void UseItem();
+    public abstract bool UseItem();
 }

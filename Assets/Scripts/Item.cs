@@ -1,36 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Item : MonoBehaviour {
-    [SerializeField] string itemName;
-    [SerializeField] string itemId;
+    public ItemSO itemSO;
+    public int quantity;
 
-    [SerializeField][TextArea] string itemDescription;
-    [SerializeField] int quantity;
-    [SerializeField] Sprite sprite;
-    [SerializeField] AudioClip pickupSound;
     InventoryManager inventoryManager;
 
     void Awake() {
         if (!GameObject.FindWithTag("InventoryCanvas").TryGetComponent<InventoryManager>(out inventoryManager)) {
             Debug.LogError("InventoryManager not found");
         }
-        GetComponentInChildren<SpriteRenderer>().sprite = sprite;
+
     }
 
-    void OnCollisionEnter2D(Collision2D collision) {
+    void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
-            int leftOverItems = inventoryManager.AddItem(itemId, itemName, quantity, sprite, pickupSound, itemDescription);
+            int leftOverItems = inventoryManager.AddItemToInventory(quantity, itemSO);
             if (leftOverItems <= 0) {
-                SoundManager.Instance.PlaySound(pickupSound);
+                SoundManager.Instance.PlaySound(itemSO.pickupSound);
                 Destroy(gameObject);
             } else {
                 quantity = leftOverItems;
             }
-
-
         }
     }
 }

@@ -1,24 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro.Examples;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler {
 
     // ====== ITEM DATA ======= //
-    public string itemName;
-    public string itemId;
+    private ItemSO itemSO;
     public int quantity;
-    public Sprite sprite;
-    public AudioClip pickupSound;
-    public bool isFull;
-    public string itemDescription;
-    public Sprite emptySprite;
-
-    [SerializeField] int maxNumberOfItems;
-
 
     // ====== ITEM SLOT ======= //
     [SerializeField] TMP_Text quantityText;
@@ -27,12 +17,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
     public GameObject selectedShader;
     public bool isThisItemSelected;
 
-
-    // ====== ITEM SLOT ======= //
     public Image itemDescriptionImage;
     public TMP_Text itemDescriptionNameText;
     public TMP_Text itemDescriptionText;
-
+    public bool isFull;
 
     // ====== INVENTORY MANAGER ======= //
     private InventoryManager inventoryManager;
@@ -42,39 +30,30 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
         if (!GameObject.FindWithTag("InventoryCanvas").TryGetComponent<InventoryManager>(out inventoryManager)) {
             Debug.LogError("InventoryManager not found");
         }
+        isFull = false;
     }
 
-    public int AddItem(string itemId, string itemName, int quantity, Sprite sprite, AudioClip pickupSound, string itemDescription) {
+    public int AddItemToSlot(int quantity, ItemSO itemSO) {
         if (isFull) {
             return quantity;
         }
-
-        // update name
-        this.itemName = itemName;
-        this.itemId = itemId;
-
-        // update image
-        this.sprite = sprite;
-        itemImage.sprite = sprite;
-
-        // update description
-        this.itemDescription = itemDescription;
+        this.itemSO = itemSO;
+        itemImage.sprite = itemSO.itemPicture;
 
         //update quantity
         this.quantity += quantity;
-        if (this.quantity >= maxNumberOfItems) {
-            this.pickupSound = pickupSound;
-            quantityText.text = maxNumberOfItems.ToString();
+        int maxNumberOfItemsOfThisType = itemSO.maxNumberOfItemsPerSlot;
+        if (this.quantity >= maxNumberOfItemsOfThisType) {
+            quantityText.text = maxNumberOfItemsOfThisType.ToString();
             quantityText.enabled = true;
             isFull = true;
-            int extraItems = this.quantity - maxNumberOfItems;
-            this.quantity = maxNumberOfItems;
+            int extraItems = this.quantity - maxNumberOfItemsOfThisType;
+            this.quantity = maxNumberOfItemsOfThisType;
             return extraItems;
         }
 
         quantityText.text = quantity.ToString();
         quantityText.enabled = true;
-        this.pickupSound = pickupSound;
         return 0;
     }
 
@@ -88,21 +67,68 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
 
     public void OnLeftClick() {
         if (isThisItemSelected) {
-            inventoryManager.UseItem(itemId);
-        }
-        inventoryManager.DeselectAllSlots();
-        selectedShader.SetActive(true);
-        isThisItemSelected = true;
-        itemDescriptionNameText.text = itemName;
-        itemDescriptionText.text = itemDescription;
-        itemDescriptionImage.sprite = sprite;
-        if (itemDescriptionImage.sprite == null) {
-            itemDescriptionImage.sprite = emptySprite;
+            if (itemSO == null) {
+                return;
+            }
+            bool usable = inventoryManager.UseItem(itemSO.itemType);
+            if (usable) {
+                quantity--;
+                isFull = false;
+                quantityText.text = quantity.ToString();
+                if (quantity == 0) {
+                    EmptySlot();
+                }
+            }
+        } else {
+            inventoryManager.DeselectAllSlots();
+            selectedShader.SetActive(true);
+            isThisItemSelected = true;
+            if (itemSO == null) {
+                return;
+            }
+            itemDescriptionNameText.text = itemSO.itemName;
+            itemDescriptionText.text = itemSO.itemDescription;
+            itemDescriptionImage.sprite = itemSO.itemPicture;
         }
     }
 
 
     public void OnRightClick() {
+        if (itemSO == null) {
+            return;
+        }
+        GameObject itemToDrop = new();
+        Item newItem = itemToDrop.AddComponent<Item>();
+        newItem.quantity = 1;
+        newItem.itemSO = itemSO;
+
+        SpriteRenderer spriteRenderer = itemToDrop.AddComponent<SpriteRenderer>();
+        spriteRenderer.sprite = itemSO.itemPicture;
+        spriteRenderer.sortingOrder = 0;
+        spriteRenderer.sortingLayerName = "Player";
+        itemToDrop.layer = LayerMask.NameToLayer("Items");
+
+        itemToDrop.AddComponent<BoxCollider2D>();
+        itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(0.5f, 0, 0);
+
+        quantity--;
+        isFull = false;
+        quantityText.text = quantity.ToString();
+        if (quantity == 0) {
+            EmptySlot();
+        }
     }
 
+    public void EmptySlot() {
+        quantityText.enabled = false;
+        itemImage.sprite = itemSO.emptySprite;
+        itemDescriptionNameText.text = "";
+        itemDescriptionText.text = "";
+        itemDescriptionImage.sprite = itemSO.emptySprite;
+        itemSO = null;
+    }
+
+    public ItemSO GetItemSO() {
+        return itemSO;
+    }
 }

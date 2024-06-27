@@ -20,6 +20,10 @@ public class HealthManager {
         return currentHealth;
     }
 
+    public int GetMaxHealth() {
+        return maxHealth;
+    }
+
     public void TakeDamage(int damageAmount) {
         currentHealth -= damageAmount;
     }

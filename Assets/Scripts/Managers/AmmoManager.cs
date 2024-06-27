@@ -13,10 +13,15 @@ public class AmmoManager {
         return currentAmountOfAmmo;
     }
 
+    public int GetMaxAmmo() {
+        return maxAmmo;
+    }
+
     public void AddAmmo(int amountOfAmmo) {
-        currentAmountOfAmmo += amountOfAmmo;
-        if (currentAmountOfAmmo > maxAmmo) {
+        if (currentAmountOfAmmo + amountOfAmmo >= maxAmmo) {
             currentAmountOfAmmo = maxAmmo;
+        } else {
+            currentAmountOfAmmo += amountOfAmmo;
         }
     }
 }

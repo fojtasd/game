@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerAimWeapon : MonoBehaviour {
+public class PlayerShootingManager : MonoBehaviour {
     public event EventHandler<OnShootEventArgs> OnShoot;
     public class OnShootEventArgs : EventArgs {
         public Vector3 gunEndPointPosition;
@@ -11,8 +11,8 @@ public class PlayerAimWeapon : MonoBehaviour {
     }
     Transform aimTransform;
     Transform aimGunEndPointTransform;
-    Animator aimAnimator;
-    Animator shotgunAnimator;
+    Animator gunAnimator;
+    Animator muzzleAnimator;
 
     bool facingRight = true;
     bool canShoot = true;
@@ -22,8 +22,8 @@ public class PlayerAimWeapon : MonoBehaviour {
 
     void Awake() {
         aimTransform = transform.Find("Aim");
-        aimAnimator = aimTransform.Find("Muzzle").GetComponent<Animator>();
-        shotgunAnimator = aimTransform.GetComponent<Animator>();
+        gunAnimator = aimTransform.Find("Muzzle").GetComponent<Animator>();
+        muzzleAnimator = aimTransform.GetComponentInChildren<Animator>();
         aimGunEndPointTransform = aimTransform.Find("GunEndPointPosition");
     }
 
@@ -45,7 +45,7 @@ public class PlayerAimWeapon : MonoBehaviour {
             return;
         }
         if (canShoot && ctx.started) {
-            aimAnimator.SetTrigger("Shoot");
+            gunAnimator.SetTrigger("Shoot");
             OnShoot?.Invoke(this, new OnShootEventArgs {
                 gunEndPointPosition = aimGunEndPointTransform.position,
                 shootPosition = GetMouseWorldPosition()
@@ -107,11 +107,11 @@ public class PlayerAimWeapon : MonoBehaviour {
 
     IEnumerator WaitAndPump() {
         yield return new WaitForSeconds(0.2f);
-        shotgunAnimator.SetTrigger("Pump");
+        muzzleAnimator.SetTrigger("Pump");
     }
 
     bool IsInState(string stateName) {
-        AnimatorStateInfo stateInfo = aimAnimator.GetCurrentAnimatorStateInfo(0);
+        AnimatorStateInfo stateInfo = gunAnimator.GetCurrentAnimatorStateInfo(0);
         return stateInfo.IsName(stateName);
     }
 

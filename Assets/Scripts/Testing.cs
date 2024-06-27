@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Testing : MonoBehaviour {
     // Start is called before the first frame update
-    [SerializeField] private PlayerAimWeapon playerAimWeapon;
+    [SerializeField] private PlayerShootingManager playerAimWeapon;
 
     private void Start() {
         playerAimWeapon.OnShoot += PlayerAimWeapon_OnShoot;
     }
 
-    private void PlayerAimWeapon_OnShoot(object sender, PlayerAimWeapon.OnShootEventArgs e) {
+    private void PlayerAimWeapon_OnShoot(object sender, PlayerShootingManager.OnShootEventArgs e) {
         CreateWeaponTracer(e.shootPosition, e.gunEndPointPosition);
     }
 

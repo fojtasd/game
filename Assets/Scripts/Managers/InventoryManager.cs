@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,12 +22,13 @@ public class InventoryManager : MonoBehaviour {
         }
     }
 
-    public int AddItem(string itemId, string itemName, int quantity, Sprite sprite, AudioClip pickupSound, string itemDescription) {
+    public int AddItemToInventory(int quantity, ItemSO itemSO) {
         for (int i = 0; i < itemSlots.Length; i++) {
-            if (!itemSlots[i].isFull && itemSlots[i].name == name || itemSlots[i].quantity == 0) {
-                int leftOverItems = itemSlots[i].AddItem(itemId, itemName, quantity, sprite, pickupSound, itemDescription);
+            // zaloha piča !itemSlots[i].isFull && itemSlots[i].getItemSO().itemType == itemSO.itemType || itemSlots[i].quantity == 0
+            if (itemSlots[i].GetItemSO() == null || !itemSlots[i].isFull && itemSlots[i].GetItemSO().itemType == itemSO.itemType || itemSlots[i].quantity == 0) {
+                int leftOverItems = itemSlots[i].AddItemToSlot(quantity, itemSO);
                 if (leftOverItems > 0) {
-                    leftOverItems = AddItem(itemId, itemName, leftOverItems, sprite, pickupSound, itemDescription);
+                    leftOverItems = AddItemToInventory(leftOverItems, itemSO);
                 }
                 return leftOverItems;
             }
@@ -37,13 +36,14 @@ public class InventoryManager : MonoBehaviour {
         return quantity;
     }
 
-    public void UseItem(string itemId) {
+    public bool UseItem(ItemType itemType) {
         for (int i = 0; i < itemSOs.Length; i++) {
-            if (itemSOs[i].itemId == itemId) {
-                itemSOs[i].UseItem();
+            if (itemSOs[i].itemType == itemType) {
+                bool usable = itemSOs[i].UseItem();
+                return usable;
             }
         }
-
+        return false;
     }
 
     public void DeselectAllSlots() {
