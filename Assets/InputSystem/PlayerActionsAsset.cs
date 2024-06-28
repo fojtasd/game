@@ -71,6 +71,15 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleEquipment"",
+                    ""type"": ""Button"",
+                    ""id"": ""15f78373-4996-4677-943a-062965f3bd5c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -192,6 +201,17 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ToggleInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3164651c-e99c-4b6c-aaa0-176a81afa058"",
+                    ""path"": ""<Keyboard>/backquote"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleEquipment"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -784,6 +804,7 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
         m_PlayerWalking_Shoot = m_PlayerWalking.FindAction("Shoot", throwIfNotFound: true);
         m_PlayerWalking_DrawWeapon = m_PlayerWalking.FindAction("DrawWeapon", throwIfNotFound: true);
         m_PlayerWalking_ToggleInventory = m_PlayerWalking.FindAction("ToggleInventory", throwIfNotFound: true);
+        m_PlayerWalking_ToggleEquipment = m_PlayerWalking.FindAction("ToggleEquipment", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -862,6 +883,7 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerWalking_Shoot;
     private readonly InputAction m_PlayerWalking_DrawWeapon;
     private readonly InputAction m_PlayerWalking_ToggleInventory;
+    private readonly InputAction m_PlayerWalking_ToggleEquipment;
     public struct PlayerWalkingActions
     {
         private @PlayerActionsAsset m_Wrapper;
@@ -871,6 +893,7 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
         public InputAction @Shoot => m_Wrapper.m_PlayerWalking_Shoot;
         public InputAction @DrawWeapon => m_Wrapper.m_PlayerWalking_DrawWeapon;
         public InputAction @ToggleInventory => m_Wrapper.m_PlayerWalking_ToggleInventory;
+        public InputAction @ToggleEquipment => m_Wrapper.m_PlayerWalking_ToggleEquipment;
         public InputActionMap Get() { return m_Wrapper.m_PlayerWalking; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -895,6 +918,9 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
             @ToggleInventory.started += instance.OnToggleInventory;
             @ToggleInventory.performed += instance.OnToggleInventory;
             @ToggleInventory.canceled += instance.OnToggleInventory;
+            @ToggleEquipment.started += instance.OnToggleEquipment;
+            @ToggleEquipment.performed += instance.OnToggleEquipment;
+            @ToggleEquipment.canceled += instance.OnToggleEquipment;
         }
 
         private void UnregisterCallbacks(IPlayerWalkingActions instance)
@@ -914,6 +940,9 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
             @ToggleInventory.started -= instance.OnToggleInventory;
             @ToggleInventory.performed -= instance.OnToggleInventory;
             @ToggleInventory.canceled -= instance.OnToggleInventory;
+            @ToggleEquipment.started -= instance.OnToggleEquipment;
+            @ToggleEquipment.performed -= instance.OnToggleEquipment;
+            @ToggleEquipment.canceled -= instance.OnToggleEquipment;
         }
 
         public void RemoveCallbacks(IPlayerWalkingActions instance)
@@ -1101,6 +1130,7 @@ public partial class @PlayerActionsAsset: IInputActionCollection2, IDisposable
         void OnShoot(InputAction.CallbackContext context);
         void OnDrawWeapon(InputAction.CallbackContext context);
         void OnToggleInventory(InputAction.CallbackContext context);
+        void OnToggleEquipment(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

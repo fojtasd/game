@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2572b285c4a8b0a42a9618b037000438
+guid: bee4cb1b5093bf346a06bef08f691b04
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7707901220252787486
-    second: medkit-small_0
+      213: -4003824838158083266
+    second: front-naked_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: medkit-small
+      name: front-naked
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 13
-        height: 15
+        x: 25
+        y: 137
+        width: 52
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,29 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ec580bada8080590800000000000000
-      internalID: -7707901220252787486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: medkit-small-icon
-      rect:
-        serializedVersion: 2
-        x: 26
-        y: 8
-        width: 28
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e64fcbc227da7704983b21881af33a36
-      internalID: -1193298856
+      spriteID: e3b93bad58e8f68c0800000000000000
+      internalID: -4003824838158083266
       vertices: []
       indices: 
       edges: []
@@ -157,7 +136,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 31ec6009e29e0a247a751a2bb5b23d3a
     internalID: 0
     vertices: []
     indices: 
@@ -165,8 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      medkit-small: -7707901220252787486
-      medkit-small-icon: -1193298856
+      front-naked: -4003824838158083266
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

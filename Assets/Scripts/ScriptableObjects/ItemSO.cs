@@ -4,9 +4,10 @@ using UnityEngine;
 public class ItemSO : ItemSOBase {
 
     [Header("Basic Info")]
-    public ItemType itemType;
+    public ItemId itemId;
     public string itemName;
     [TextArea] public string itemDescription;
+    public ItemType itemType;
 
     [Header("Stat Changes")]
     public StatToChange statToChange = new();

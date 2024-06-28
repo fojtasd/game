@@ -278,7 +278,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 1551606315, guid: 65bcb860de175124eada53527e0e98c1, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -377,14 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d3118ca232fe34aae02c258c33ab9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
   quantity: 0
-  sprite: {fileID: 0}
-  pickupSound: {fileID: 0}
-  isFull: 0
-  itemDescription: 
-  emptySprite: {fileID: 21300000, guid: ea8c882e5cafad04892449042607544d, type: 3}
-  maxNumberOfItems: 50
   quantityText: {fileID: 2358775049187250041}
   itemImage: {fileID: 2617059720166609185}
   selectedShader: {fileID: 5423998654565970343}
@@ -392,3 +385,4 @@ MonoBehaviour:
   itemDescriptionImage: {fileID: 0}
   itemDescriptionNameText: {fileID: 0}
   itemDescriptionText: {fileID: 0}
+  isFull: 0

@@ -1,26 +1,24 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using TMPro.Examples;
 
-public class ItemSlot : MonoBehaviour, IPointerClickHandler {
+public class EquipmentSlot : MonoBehaviour, IPointerClickHandler {
 
     // ====== ITEM DATA ======= //
     private ItemSO itemSO;
     public int quantity;
 
     // ====== ITEM SLOT ======= //
-    [SerializeField] TMP_Text quantityText;
     [SerializeField] Image itemImage;
-
     public GameObject selectedShader;
     public bool isThisItemSelected;
-
-    public Image itemDescriptionImage;
-    public TMP_Text itemDescriptionNameText;
-    public TMP_Text itemDescriptionText;
     public bool isFull;
+
+
+    // ====== EQUIPPED SLOTS ======= //
+    [SerializeField] EquippedSlot headSlot, bodySlot, mainHandSlot, shirtSlot, offHandSlot, legsSlot, feetSlot, relicSlot;
+
+
 
     // ====== INVENTORY MANAGER ======= //
     private InventoryManager inventoryManager;
@@ -50,27 +48,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
         }
 
         //update quantity
-        this.quantity += quantity;
-        int maxNumberOfItemsOfThisType = itemSO.maxNumberOfItemsPerSlot;
-        if (this.quantity >= maxNumberOfItemsOfThisType) {
-            if (this.quantity == 1) {
-                quantityText.text = "";
-            } else {
-                quantityText.text = maxNumberOfItemsOfThisType.ToString();
-            }
-            quantityText.enabled = true;
-            isFull = true;
-            int extraItems = this.quantity - maxNumberOfItemsOfThisType;
-            this.quantity = maxNumberOfItemsOfThisType;
-            return extraItems;
-        }
-        if (this.quantity == 1) {
-            quantityText.text = "";
-        } else {
-            quantityText.text = quantity.ToString();
-        }
-
-        quantityText.enabled = true;
+        this.quantity = 1;
+        isFull = true;
         return 0;
     }
 
@@ -87,35 +66,46 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
             if (itemSO == null) {
                 return;
             }
-            bool usable = inventoryManager.UseItem(itemSO.itemId);
-            if (usable) {
-                quantity--;
-                isFull = false;
-                quantityText.text = quantity.ToString();
-                if (quantity == 0) {
-                    EmptySlot();
-                }
-            }
+            EquipGear();
+
         } else {
-            inventoryManager.DeselectAllInventorySlots();
+            inventoryManager.DeselectAllEquipmentSlots();
             selectedShader.SetActive(true);
             isThisItemSelected = true;
             if (itemSO == null) {
                 return;
             }
-            itemDescriptionNameText.text = itemSO.itemName;
-            itemDescriptionText.text = itemSO.itemDescription;
-            if (ShouldUseSmallIcon()) {
-                if (itemSO.iconSprite != null) {
-                    itemDescriptionImage.sprite = itemSO.iconSprite;
-                } else {
-                    Debug.LogError("Icon sprite not found for " + itemSO.itemName);
-                    itemDescriptionImage.sprite = itemSO.itemPicture;
-                }
-            } else {
-                itemDescriptionImage.sprite = itemSO.itemPicture;
-            }
         }
+    }
+
+    private void EquipGear() {
+        switch (itemSO.itemType) {
+            case ItemType.head:
+                headSlot.EquipGear(itemSO);
+                break;
+            case ItemType.shirt:
+                shirtSlot.EquipGear(itemSO);
+                break;
+            case ItemType.body:
+                bodySlot.EquipGear(itemSO);
+                break;
+            case ItemType.mainHand:
+                mainHandSlot.EquipGear(itemSO);
+                break;
+            case ItemType.offHand:
+                offHandSlot.EquipGear(itemSO);
+                break;
+            case ItemType.legs:
+                legsSlot.EquipGear(itemSO);
+                break;
+            case ItemType.feet:
+                feetSlot.EquipGear(itemSO);
+                break;
+            case ItemType.relic:
+                relicSlot.EquipGear(itemSO);
+                break;
+        }
+        EmptySlot();
     }
 
 
@@ -140,23 +130,15 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
 
         quantity--;
         isFull = false;
-        if (quantity == 1) {
-            quantityText.text = "";
-        } else {
-            quantityText.text = quantity.ToString();
-        }
         if (quantity == 0) {
             EmptySlot();
         }
     }
 
     public void EmptySlot() {
-        quantityText.enabled = false;
         itemImage.sprite = itemSO.emptySprite;
-        itemDescriptionNameText.text = "";
-        itemDescriptionText.text = "";
-        itemDescriptionImage.sprite = itemSO.emptySprite;
         itemSO = null;
+        isFull = false;
     }
 
     public ItemSO GetItemSO() {

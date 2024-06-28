@@ -15,6 +15,7 @@ TagManager:
   - InventoryCanvas
   - PlayerStats
   - AmmoBar
+  - HeadControllerInInventory
   layers:
   - Default
   - TransparentFX
