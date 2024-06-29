@@ -133,6 +133,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: shirts-preview
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 173
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614d341b2728eab4b9f645d9d0680f78
+      internalID: 602319926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,6 +166,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       shirt-with-skull: 4102851767660153476
+      shirts-preview: 602319926
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

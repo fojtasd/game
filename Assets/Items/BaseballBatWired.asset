@@ -20,10 +20,9 @@ MonoBehaviour:
   itemDescription: Baseball bat is handy when playing baseball or when you're getting
     robbed.
   itemType: 9
+  isEquipment: 1
   statToChange: 0
   amountToChangeStat: 0
-  attributeToChange: 0
-  amountToChangeAttribute: 0
   itemPicture: {fileID: 8725695345122384406, guid: 9d9ada428eb843642a33c5b4ec1d979e, type: 3}
   pickupSound: {fileID: 8300000, guid: 01b47a1731f36444ca7af0d02a9abd36, type: 3}
   maxNumberOfItemsPerSlot: 1

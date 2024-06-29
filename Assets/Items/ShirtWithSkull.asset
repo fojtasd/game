@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emptySprite: {fileID: 21300000, guid: ea8c882e5cafad04892449042607544d, type: 3}
   iconSprite: {fileID: 0}
+  equippedItemSprite: {fileID: 0}
   itemId: 4
   itemName: Black shirt with skull
   itemDescription: My favourite shirt from teenage years. Its warm, has no holes,
     and do not represent any ideology. Great for friday beer sessions.
   itemType: 6
+  isEquipment: 1
   statToChange: 0
   amountToChangeStat: 0
-  attributeToChange: 0
-  amountToChangeAttribute: 0
   itemPicture: {fileID: 4102851767660153476, guid: 648d3651ad3905743bb7a26a95803aea, type: 3}
   pickupSound: {fileID: 8300000, guid: 01b47a1731f36444ca7af0d02a9abd36, type: 3}
   maxNumberOfItemsPerSlot: 1

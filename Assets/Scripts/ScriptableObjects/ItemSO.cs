@@ -8,12 +8,11 @@ public class ItemSO : ItemSOBase {
     public string itemName;
     [TextArea] public string itemDescription;
     public ItemType itemType;
+    public bool isEquipment;
 
     [Header("Stat Changes")]
     public StatToChange statToChange = new();
     public int amountToChangeStat;
-    public AttributesToChange attributeToChange = new();
-    public int amountToChangeAttribute;
 
     [Header("Visual and Audio")]
     public Sprite itemPicture;
@@ -27,13 +26,6 @@ public class ItemSO : ItemSOBase {
         health,
         ammo
     };
-
-    public enum AttributesToChange {
-        none,
-        health,
-        ammo
-    };
-
 
     public override bool UseItem() {
         switch (statToChange) {
