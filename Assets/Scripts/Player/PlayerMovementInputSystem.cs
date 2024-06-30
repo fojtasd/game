@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovementInputSystem : MonoBehaviour {
+    public Pokus pokus;
+
 
     public BoxCollider2D groundCheck;
     public LayerMask groundLayer;
@@ -76,6 +78,7 @@ public class PlayerMovementInputSystem : MonoBehaviour {
             agroState = AgroState.Agro;
             DrawWeaponEvent.Invoke();
         }
+        pokus.ChangeLegs();
     }
 
     public void Move(InputAction.CallbackContext ctx) {
