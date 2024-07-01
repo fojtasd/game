@@ -3,12 +3,39 @@ using UnityEngine.InputSystem;
 
 public class InventoryManager : MonoBehaviour {
     public GameObject EquipmentMenu;
-    public EquipmentSlot[] equipmentSlots;
-    public EquippedSlot[] equippedSlots;
+    public InventorySlot[] inventorySlots;
+    public EquipmentSlot[] equippedSlots;
     public ItemSO[] itemSOs;
 
     void Start() {
         EquipmentMenu.SetActive(false);
+        InventorySlot.OnItemDropped += ReorganizeInventory;
+    }
+
+    private void ReorganizeInventory() {
+        int leftIndex = 0;
+        int rightIndex = inventorySlots.Length - 1;
+
+        while (leftIndex < rightIndex) {
+            bool isLeftFree = inventorySlots[leftIndex].IsSlotFree();
+            bool isRightFree = inventorySlots[rightIndex].IsSlotFree();
+
+            if (isLeftFree && !isRightFree) {
+                inventorySlots[leftIndex].SetStoredItem(inventorySlots[rightIndex].GetStoredItem().Clone());
+                inventorySlots[rightIndex].EmptySlot();
+                inventorySlots[leftIndex].UpdateVisuals();
+                leftIndex++;
+                rightIndex--;
+                continue;
+            }
+
+            if (!isLeftFree) {
+                leftIndex++;
+            }
+            if (isRightFree) {
+                rightIndex--;
+            }
+        }
     }
 
     public void ToggleInventory(InputAction.CallbackContext context) {
@@ -21,17 +48,13 @@ public class InventoryManager : MonoBehaviour {
         }
     }
 
-    public int AddItemToInventory(int quantity, ItemSO itemSO) {
-        for (int i = 0; i < equipmentSlots.Length; i++) {
-            if (equipmentSlots[i].GetItemSO() == null || !equipmentSlots[i].isFull && equipmentSlots[i].GetItemSO().itemId == itemSO.itemId || equipmentSlots[i].quantity == 0) {
-                int leftOverItems = equipmentSlots[i].AddItemToSlot(quantity, itemSO);
-                if (leftOverItems > 0) {
-                    leftOverItems = AddItemToInventory(leftOverItems, itemSO);
-                }
-                return leftOverItems;
+    public void AddItemToInventory(Item item) {
+        foreach (InventorySlot slot in inventorySlots) {
+            item = slot.AddItemToSlot(item);
+            if (item == null) {
+                return;
             }
         }
-        return quantity;
     }
 
     public bool UseItem(ItemId itemId) {
@@ -44,36 +67,18 @@ public class InventoryManager : MonoBehaviour {
         return false;
     }
 
-    public void DeselectAllEquipmentSlots() {
-        for (int i = 0; i < equipmentSlots.Length; i++) {
-            equipmentSlots[i].selectedShader.SetActive(false);
-            equipmentSlots[i].isThisItemSelected = false;
+    public void DeselectInventorySlots() {
+        for (int i = 0; i < inventorySlots.Length; i++) {
+            inventorySlots[i].selectedShader.SetActive(false);
+            inventorySlots[i].isThisSlotSelected = false;
         }
     }
 
-    public void DeselectAllEquippedSlots() {
+    public void DeselectAllEquipmentSlots() {
         for (int i = 0; i < equippedSlots.Length; i++) {
             equippedSlots[i].selectedShader.SetActive(false);
-            equippedSlots[i].isThisItemSelected = false;
+            equippedSlots[i].isThisSlotSelected = false;
         }
-    }
-
-    private bool IsEquipment(ItemType itemType) {
-        return itemType switch {
-            ItemType.ammo => false,
-            ItemType.consumable => false,
-            ItemType.crafting => false,
-            ItemType.collectible => false,
-            ItemType.head => true,
-            ItemType.shirt => true,
-            ItemType.body => true,
-            ItemType.legs => true,
-            ItemType.mainHand => true,
-            ItemType.offHand => true,
-            ItemType.relic => true,
-            ItemType.feet => true,
-            _ => false,
-        };
     }
 }
 

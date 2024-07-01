@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Walking
+    m_Hash: 670923915
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: feet_1
+      m_Hash: 222311365
+      m_Sprite: {fileID: -147405896, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -147405896, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+    - m_Name: feet_2
+      m_Hash: 340353663
+      m_Sprite: {fileID: -811093319, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -811093319, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+    - m_Name: feet_3
+      m_Hash: 592335593
+      m_Sprite: {fileID: 504430405, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 504430405, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+    - m_Name: feet_4
+      m_Hash: 1026213706
+      m_Sprite: {fileID: 35986693, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 35986693, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+    - m_Name: feet_5
+      m_Hash: 170784732
+      m_Sprite: {fileID: 1766019806, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1766019806, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+    - m_Name: feet_6
+      m_Hash: 321168998
+      m_Sprite: {fileID: -2010238104, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2010238104, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+    - m_Name: feet_7
+      m_Hash: 606312176
+      m_Sprite: {fileID: -1317332843, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1317332843, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+    - m_Name: feet_8
+      m_Hash: 882674529
+      m_Sprite: {fileID: -845674821, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -845674821, guid: c2e76519abb88a643a212793d9fa36c0, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 8
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638554207535062943
+  m_Version: 1

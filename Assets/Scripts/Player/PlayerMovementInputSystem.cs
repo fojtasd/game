@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovementInputSystem : MonoBehaviour {
-    public Pokus pokus;
+    public Pokus2 pokus;
 
 
     public BoxCollider2D groundCheck;

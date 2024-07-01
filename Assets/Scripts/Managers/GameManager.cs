@@ -8,8 +8,9 @@ public class GameManager : MonoBehaviour {
     public AmmoBar ammoBar;
     public SOManager itemManagerSO;
     public PlayerStatsManager playerStatsManager;
+    public InventoryManager inventoryManager;
 
-    void Start() {
+    void Awake() {
         HealthManager healthManager = new(100, 100);
         AmmoManager ammoManager = new(0, 100);
         CursorManager cursorManager = new();
@@ -24,5 +25,20 @@ public class GameManager : MonoBehaviour {
         ammoBar.Setup(ammoManager);
 
         itemManagerSO.Setup(healthManager, ammoManager);
+        Setup();
+    }
+
+    void Setup() {
+        Item.OnPlayerTouched += delegate (Item item) {
+            int initialQuantity = item.quantity;
+            inventoryManager.AddItemToInventory(item);
+            bool wasItemCollected = item.quantity != initialQuantity;
+            if (wasItemCollected) {
+                SoundManager.Instance.PlaySound(item.itemSO.pickupSound);
+            }
+            if (item.quantity == 0) {
+                Destroy(item.gameObject);
+            }
+        };
     }
 }

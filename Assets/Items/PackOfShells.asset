@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emptySprite: {fileID: 21300000, guid: 2c47377d661c9684e80bc9d40ec38f1f, type: 3}
   iconSprite: {fileID: -389054471, guid: cfb97b98d5a92f84b9e9a6c434489ef1, type: 3}
+  equippedItemSprite: {fileID: 0}
   itemId: 2
   itemName: Pack of shotgun shells
   itemDescription: Shotgun shells are used for various purposes. For example for
     reloading shotgun. Which can be used for other various purposes.
   itemType: 1
+  isEquipment: 0
   statToChange: 2
   amountToChangeStat: 4
-  attributeToChange: 0
-  amountToChangeAttribute: 0
   itemPicture: {fileID: 1798547626, guid: cfb97b98d5a92f84b9e9a6c434489ef1, type: 3}
   pickupSound: {fileID: 8300000, guid: 067cb04856a78e24a8e8bbf413fa3e01, type: 3}
   maxNumberOfItemsPerSlot: 8
